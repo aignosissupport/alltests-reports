@@ -19,7 +19,7 @@ import MCHAT3 from './mchat3';
 import CARS from './cars';
 import CARS2 from './cars2';
 import CARS3 from './cars3';
-
+import INCLEN from './inclen';
 const pdfData = [
     {
         url:'https://prod-aignosis-terraform-state.s3.ap-south-1.amazonaws.com/1738767409455_page1.png',
@@ -139,6 +139,7 @@ const ComponentToPrint = React.forwardRef(({ isisaaChecked, ismchatChecked, isca
         <div className="pdf-page isaa-page"><CARS /></div>
         {/* <div className="pdf-page isaa-page"><CARS2 /></div>
         <div className="pdf-page isaa-page"><CARS3 /></div>  */}
+        <div className="pdf-page isaa-page"><INCLEN /></div>
 
 
     {SecondpdfData.map((item, index) => (
@@ -163,6 +164,7 @@ const GeneratePDF = () => {
     const [isisaaChecked, setIsisaaChecked] = useState(true);
     const [ismchatChecked, setIsmchatChecked] = useState(true);
     const [iscarsChecked, setIscarsChecked] = useState(true);
+    const [isinclenChecked, setIsinclenChecked] = useState(true);
 
     const [toRemove, setToRemove] = useState([7, 9, 11]);
     const handleCheckboxChange = (e, value) => {
@@ -176,7 +178,9 @@ const GeneratePDF = () => {
               updatedToRemove.push(8);
           } else if (name === "cars" && !updatedToRemove.includes(12)) {
               updatedToRemove.push(12);
-          }
+          } else if (name === "inclen" && !updatedToRemove.includes(12)) {
+            updatedToRemove.push(14);
+        }
       } else {
           if (name === "mchat") {
               updatedToRemove = updatedToRemove.filter(num => num !== 10);
@@ -185,6 +189,9 @@ const GeneratePDF = () => {
           } else if (name === "cars") {
               updatedToRemove = updatedToRemove.filter(num => num !== 12);
           }
+          else if (name === "inclen") {
+            updatedToRemove = updatedToRemove.filter(num => num !== 14);
+        }
       }
 
       setToRemove(updatedToRemove);
@@ -193,6 +200,7 @@ const GeneratePDF = () => {
       if (name === "mchat") setIsmchatChecked(checked);
       if (name === "isaa") setIsisaaChecked(checked);
       if (name === "cars") setIscarsChecked(checked);
+      if (name === "inclen") setIsinclenChecked(checked);
   };
  
 
@@ -263,6 +271,10 @@ const GeneratePDF = () => {
                 <label>
                     <input type="checkbox" name="cars" checked={iscarsChecked} onChange={(e) => handleCheckboxChange(e, 12)} />
                     CARS
+                </label>
+                <label>
+                    <input type="checkbox" name="inclen" checked={isinclenChecked} onChange={(e) => handleCheckboxChange(e, 12)} />
+                    INCLEN
                 </label>
             </div>
         <button
