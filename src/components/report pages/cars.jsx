@@ -52,12 +52,11 @@ const CARS = () => {
           maxWidth: "800px",
           margin: "auto"}}>
         <h1 style={{paddingBottom: "15px",
-            marginLeft:"-30vw",
             fontFamily: '"Times New Roman", Times, serif',
             fontWeight: "600",
             fontSize: "xx-large",
             color: "#94059f",
-            }}>CARS <span style={{color:"black"}}> Screening:</span>
+            }}>CARS <span style={{color:"black"}}> Screening</span>
         </h1>
         <div style={{textAlign:"justify"}}>
         Autism Screening Measure: The childhood Autism Rating Scale-2 (CARS-2), which is a 15- item behavioral rating scale. It is designed as a screening tool to identify children with autism and help identify possible signs of autism (or autism spectrum disorder). The CARS-2 ratings are comprised of behavioral observations, parental reports, and a review of relevant records. Scores are as follows: 

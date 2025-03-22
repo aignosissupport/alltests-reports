@@ -52,12 +52,11 @@ const MCHAT = () => {
           maxWidth: "800px",
           margin: "auto"}}>
         <h1 style={{paddingBottom: "15px",
-            marginLeft:"-28vw",
             fontFamily: '"Times New Roman", Times, serif',
             fontWeight: "600",
             fontSize: "xx-large",
             color: "#94059f",
-            }}>MCHAT <span style={{color:"black"}}> Screening:</span>
+            }}>MCHAT <span style={{color:"black"}}> Screening</span>
         </h1>
         <div style={{textAlign:"justify"}}>
         The Modified Checklist for Autism in Toddlers, Revised (MCHAT-R) is a standardized screening tool designed to assess behavioral development in toddlers aged 16-30 months. This 20-question screener evaluates various aspects of a child's behavior, providing insight into their developmental progress.

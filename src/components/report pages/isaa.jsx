@@ -156,12 +156,11 @@ const createBarChart = (data) => {
           maxWidth: "800px",
           margin: "auto"}}>
         <h1 style={{paddingBottom: "15px",
-            marginLeft:"-23vw",
             fontFamily: '"Times New Roman", Times, serif',
             fontWeight: "600",
             fontSize: "xx-large",
             color: "#94059f",
-            }}>Developmental <span style={{color:"black"}}> Screening:</span>
+            }}>Developmental <span style={{color:"black"}}> Screening</span>
         </h1>
         <div style={{textAlign:"justify"}}>
         ISAA is an objective tool for persons with autism that uses observations, clinical evaluations of behaviors, testing by interaction with subjects and supplemented by parents or caretakers in order to diagnose autism. ISAA consists of 40 items rated on a 5 scale ranging from 1 (never) to 5 (always). The 40 items on ISAA are further divided into the following sub scales.
