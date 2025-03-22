@@ -220,7 +220,18 @@ const createBarChart = (data) => {
 this domain. <br/>
 100% developmental score - maximally atypical score. A score of 0% developmental challenge is achieved if the atypical response is selected for each relevant question in this
 domain.</p> */}
-        The Scores on ISAA were indicative of ({patientData.TOT_ISAA}) {patientData.isaaInterpretation} degree of autistic traits being present in the child. 
+        {patientData.TOT_ISAA >= 63 && patientData.TOT_ISAA <= 69 ? (
+            <>
+              The Score on ISAA ({patientData.TOT_ISAA}) suggests the presence of some autistic traits, 
+              although they do not meet the threshold for a conclusive diagnosis of autism spectrum disorder.
+            </>
+          ) : (
+            <>
+              The Scores on ISAA were indicative of ({patientData.TOT_ISAA}) {patientData.isaaInterpretation} 
+              degree of autistic traits being present in the child.
+            </>
+          )
+        } 
 
         <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
         <br />

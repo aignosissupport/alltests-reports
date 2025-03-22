@@ -70,16 +70,26 @@ const INCLEN = () => {
             color: "#94059f",
             }}>INCLEN <span style={{color:"black"}}> Screening:</span>
         </h1>
-        <div style={{textAlign:"justify"}}>
-        The INCLEN-ASD tool has been developed for identification of Autism Spectrum Disorder. This has been further modified by AIIMS, New Delhi.
+        <div style={{ textAlign: "justify" }}>
+          The INCLEN-ASD tool has been developed for identification of Autism Spectrum Disorder. 
+          This has been further modified by AIIMS, New Delhi.
 
-                <br />
-                
-                INCLEN Score: <span id="SAmessage"
-                    style={{fontSize: "x-large", color: "#007bff"}}> {INCLENscore}</span> <br />  
-                    
-                <br /><br />
-        </div><br /><br />
+          <br /><br />
+
+          {INCLENscore === 1 ? (
+              <>
+                  The scores of INDT-ASD were indicating that the child has Autism Spectrum Disorder.
+              </>
+          ) : (
+              <>
+                  The scores of INDT-ASD were indicating that the child does not have Autism Spectrum Disorder.
+              </>
+          )}
+
+          <br /><br />
+      </div>
+      <br /><br />
+
         
         <div id="patientData" style={{fontSize:"larger"}}>
           <div><span className="label" >Patient Name:</span> <span id="isaapatientNamecell">{name}</span></div>
