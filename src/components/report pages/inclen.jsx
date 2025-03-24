@@ -106,7 +106,7 @@ const INCLEN_B11 = urlParams.get("INCLEN_B11") || "N/A";
                     <td style={{ border: "1px solid #d1d5db", borderRight:"0px" ,  padding: "8px" }}>{INCLEN_B3}</td>
                 </tr>
                 <tr>
-                    <td style={{ border: "1px solid #d1d5db", borderLeft:"0px",  padding: "8px" }}>Early Onset</td> b7
+                    <td style={{ border: "1px solid #d1d5db", borderLeft:"0px",  padding: "8px" }}>Early Onset</td> 
                     <td style={{ border: "1px solid #d1d5db", borderRight:"0px" ,  padding: "8px" }}>{INCLEN_B7}</td>
                 </tr>
                 <tr>
