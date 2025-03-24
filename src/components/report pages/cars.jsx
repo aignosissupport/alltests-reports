@@ -115,7 +115,7 @@ const CARS = () => {
             fontWeight: "600",
             lineHeight: "15px",
             textAlign:"justify"}}> */}
-            <>The scores of CARS were indicating that the child has {carsInterpretation} Spectrum Disorder.</>
+            <p>The scores of CARS were indicating that the child has {carsInterpretation} Spectrum Disorder.</p>
         {/* </div> */}
         {/* <h2 style={{textAlign:"left"}}>ISAA Score: <span id="isaascore">{TOT_CARS} </span></h2>
         <p style={{textAlign:"left"}}>Interpretation: <span id="carsInterpretationmessage">{carsInterpretation}</span></p> */}
