@@ -30,12 +30,21 @@ const INCLEN = () => {
   const INCLEN_B3 = urlParams.get("INCLEN_B3") || "N/A";
   const INCLEN_B4 = urlParams.get("INCLEN_B4") || "N/A";
   const INCLEN_B5 = urlParams.get("INCLEN_B5") || "N/A";
-  const INCLEN_B6 = urlParams.get("INCLEN_B6") || "N/A";
+  // const INCLEN_B6 = urlParams.get("INCLEN_B6") || "N/A";
   const INCLEN_B7 = urlParams.get("INCLEN_B7") || "N/A";
   const INCLEN_B8 = urlParams.get("INCLEN_B8") || "N/A";
   const INCLEN_B9 = urlParams.get("INCLEN_B9") || "N/A";
   const INCLEN_B10 = urlParams.get("INCLEN_B10") || "N/A";
-const INCLEN_B11 = urlParams.get("INCLEN_B11") || "N/A";
+  // const INCLEN_B11 = urlParams.get("INCLEN_B11") || "N/A";
+
+  let INCLEN_B6 = urlParams.get("INCLEN_B6") || "N/A";
+  let INCLEN_B11 = urlParams.get("INCLEN_B11") || "N/A";
+
+  // Convert B6: If it's a string and not "nan", set to 1, else 0
+  INCLEN_B6 = (INCLEN_B6 && INCLEN_B6.toLowerCase() !== "nan") ? 1 : 0;
+
+  // Convert B11: If it's "No ASD (Response to 4 is “0”)", set to 0, else 1
+  INCLEN_B11 = (INCLEN_B11 && INCLEN_B11.startsWith("No ASD")) ? 0 : 1;
 
 	const formatteddq = isNaN(dq) ? dq : formatToOneDecimal(dq);
   return (
@@ -95,19 +104,19 @@ const INCLEN_B11 = urlParams.get("INCLEN_B11") || "N/A";
                 </tr>
                 <tr>
                     <td style={{ border: "1px solid #d1d5db", borderLeft:"0px",  padding: "8px" }}>Social Interaction</td> 
-                    <td style={{ border: "1px solid #d1d5db", borderRight:"0px" ,  padding: "8px" }}>{INCLEN_B1}</td>
+                    <td style={{ border: "1px solid #d1d5db", borderRight:"0px" ,  padding: "8px" }}>{INCLEN_B1.charAt(0)}</td>
                 </tr>
                 <tr>
                     <td style={{ border: "1px solid #d1d5db", borderLeft:"0px",   padding: "8px" }}>Comuniction</td> 
-                    <td style={{ border: "1px solid #d1d5db",borderRight:"0px" ,  padding: "8px" }}>{INCLEN_B2}</td>
+                    <td style={{ border: "1px solid #d1d5db",borderRight:"0px" ,  padding: "8px" }}>{INCLEN_B2.charAt(0)}</td>
                 </tr>
                 <tr>
                     <td style={{ border: "1px solid #d1d5db", borderLeft:"0px",   padding: "8px" }}>Restricted Interests</td> 
-                    <td style={{ border: "1px solid #d1d5db", borderRight:"0px" ,  padding: "8px" }}>{INCLEN_B3}</td>
+                    <td style={{ border: "1px solid #d1d5db", borderRight:"0px" ,  padding: "8px" }}>{INCLEN_B3.charAt(0)}</td>
                 </tr>
                 <tr>
                     <td style={{ border: "1px solid #d1d5db", borderLeft:"0px",  padding: "8px" }}>Early Onset</td> 
-                    <td style={{ border: "1px solid #d1d5db", borderRight:"0px" ,  padding: "8px" }}>{INCLEN_B7}</td>
+                    <td style={{ border: "1px solid #d1d5db", borderRight:"0px" ,  padding: "8px" }}>{INCLEN_B7.charAt(0)}</td>
                 </tr>
                 <tr>
                     <td style={{ border: "1px solid #d1d5db", borderLeft:"0px",  padding: "8px" }}>Impaired function</td> 
@@ -115,11 +124,11 @@ const INCLEN_B11 = urlParams.get("INCLEN_B11") || "N/A";
                 </tr>
                 <tr>
                     <td style={{ border: "1px solid #d1d5db", borderLeft:"0px",  padding: "8px" }}>Interpretation</td> 
-                    <td style={{ border: "1px solid #d1d5db", borderRight:"0px" ,  padding: "8px" }}>{INCLEN_B4}</td>
+                    <td style={{ border: "1px solid #d1d5db", borderRight:"0px" ,  padding: "8px" }}>{INCLEN_B4.charAt(0)}</td>
                 </tr>
                 <tr>
                     <td style={{ border: "1px solid #d1d5db", borderLeft:"0px",  padding: "8px" }}>Total Number of Criteria fulfilled</td> 
-                    <td style={{ border: "1px solid #d1d5db", borderRight:"0px" ,  padding: "8px" }}>{INCLEN_B5}</td>
+                    <td style={{ border: "1px solid #d1d5db", borderRight:"0px" ,  padding: "8px" }}>{INCLEN_B5.charAt(0)}</td>
                 </tr>
                 <tr>
                     <td style={{ border: "1px solid #d1d5db", borderLeft:"0px",  padding: "8px" }}>Summary Assesment of ASD</td> 
