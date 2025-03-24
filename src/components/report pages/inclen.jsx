@@ -76,6 +76,49 @@ const INCLEN = () => {
           This has been further modified by AIIMS, New Delhi.
 
           <br /><br />
+                  
+          <center>
+          <table border="4" style={{width: "50%", textAlign: "center", marginTop: "10px", border: "1px solid #d1d5db" , padding: "8px" }}>
+                <tr >
+                    <th style={{ border: "1px solid #d1d5db", borderLeft:"0px", borderRight:"0px" ,  padding: "8px" }}>Parameter</th>
+                    <th style={{ border: "1px solid #d1d5db", borderRight:"0px" ,  padding: "8px" }}>Score</th>
+                </tr>
+                <tr>
+                    <td style={{ border: "1px solid #d1d5db", borderLeft:"0px",  padding: "8px" }}>Self Help General</td>
+                    <td style={{ border: "1px solid #d1d5db", borderRight:"0px" ,  padding: "8px" }}>{SHG}</td>
+                </tr>
+                <tr>
+                    <td style={{ border: "1px solid #d1d5db", borderLeft:"0px",   padding: "8px" }}>Self Help Eating</td>
+                    <td style={{ border: "1px solid #d1d5db",borderRight:"0px" ,  padding: "8px" }}>{SHE}</td>
+                </tr>
+                <tr>
+                    <td style={{ border: "1px solid #d1d5db", borderLeft:"0px",   padding: "8px" }}>Self Help Dressing</td>
+                    <td style={{ border: "1px solid #d1d5db", borderRight:"0px" ,  padding: "8px" }}>{SHD}</td>
+                </tr>
+                <tr>
+                    <td style={{ border: "1px solid #d1d5db", borderLeft:"0px",  padding: "8px" }}>Self- Direction</td>
+                    <td style={{ border: "1px solid #d1d5db", borderRight:"0px" ,  padding: "8px" }}>{SD}</td>
+                </tr>
+                <tr>
+                    <td style={{ border: "1px solid #d1d5db", borderLeft:"0px",  padding: "8px" }}>Occupation</td>
+                    <td style={{ border: "1px solid #d1d5db", borderRight:"0px" ,  padding: "8px" }}>{OCC}</td>
+                </tr>
+                <tr>
+                    <td style={{ border: "1px solid #d1d5db", borderLeft:"0px",  padding: "8px" }}>Communication</td>
+                    <td style={{ border: "1px solid #d1d5db", borderRight:"0px" ,  padding: "8px" }}>{COM}</td>
+                </tr>
+                <tr>
+                    <td style={{ border: "1px solid #d1d5db", borderLeft:"0px",  padding: "8px" }}>Locomotion</td>
+                    <td style={{ border: "1px solid #d1d5db", borderRight:"0px" ,  padding: "8px" }}>{LOC}</td>
+                </tr>
+                <tr>
+                    <td style={{ border: "1px solid #d1d5db", borderLeft:"0px",  padding: "8px" }}>Socialization</td>
+                    <td style={{ border: "1px solid #d1d5db", borderRight:"0px" ,  padding: "8px" }}>{SOC}</td>
+                </tr>
+          </table> 
+          </center> 
+
+        <br /><br />
 
           {(INCLENscore === "1" || (INCLENscore === "0" && INCLEN_B4.charAt(0) === "1")) ? (
                 <>
@@ -104,47 +147,7 @@ const INCLEN = () => {
        
         
        
-{/*         
-        <center>
-        <table border="4" style={{width: "50%", textAlign: "center", marginTop: "10px", border: "1px solid #d1d5db" , padding: "8px" }}>
-                    <tr >
-                        <th style={{ border: "1px solid #d1d5db", borderLeft:"0px", borderRight:"0px" ,  padding: "8px" }}>Domain</th>
-                        <th style={{ border: "1px solid #d1d5db", borderRight:"0px" ,  padding: "8px" }}>Score</th>
-                    </tr>
-                    <tr>
-                        <td style={{ border: "1px solid #d1d5db", borderLeft:"0px",  padding: "8px" }}>Self Help General</td>
-                        <td style={{ border: "1px solid #d1d5db", borderRight:"0px" ,  padding: "8px" }}>{SHG}</td>
-                    </tr>
-                    <tr>
-                        <td style={{ border: "1px solid #d1d5db", borderLeft:"0px",   padding: "8px" }}>Self Help Eating</td>
-                        <td style={{ border: "1px solid #d1d5db",borderRight:"0px" ,  padding: "8px" }}>{SHE}</td>
-                    </tr>
-                    <tr>
-                        <td style={{ border: "1px solid #d1d5db", borderLeft:"0px",   padding: "8px" }}>Self Help Dressing</td>
-                        <td style={{ border: "1px solid #d1d5db", borderRight:"0px" ,  padding: "8px" }}>{SHD}</td>
-                    </tr>
-                    <tr>
-                        <td style={{ border: "1px solid #d1d5db", borderLeft:"0px",  padding: "8px" }}>Self- Direction</td>
-                        <td style={{ border: "1px solid #d1d5db", borderRight:"0px" ,  padding: "8px" }}>{SD}</td>
-                    </tr>
-                    <tr>
-                        <td style={{ border: "1px solid #d1d5db", borderLeft:"0px",  padding: "8px" }}>Occupation</td>
-                        <td style={{ border: "1px solid #d1d5db", borderRight:"0px" ,  padding: "8px" }}>{OCC}</td>
-                    </tr>
-                    <tr>
-                        <td style={{ border: "1px solid #d1d5db", borderLeft:"0px",  padding: "8px" }}>Communication</td>
-                        <td style={{ border: "1px solid #d1d5db", borderRight:"0px" ,  padding: "8px" }}>{COM}</td>
-                    </tr>
-                    <tr>
-                        <td style={{ border: "1px solid #d1d5db", borderLeft:"0px",  padding: "8px" }}>Locomotion</td>
-                        <td style={{ border: "1px solid #d1d5db", borderRight:"0px" ,  padding: "8px" }}>{LOC}</td>
-                    </tr>
-                    <tr>
-                        <td style={{ border: "1px solid #d1d5db", borderLeft:"0px",  padding: "8px" }}>Socialization</td>
-                        <td style={{ border: "1px solid #d1d5db", borderRight:"0px" ,  padding: "8px" }}>{SOC}</td>
-                    </tr>
-                </table> 
-        </center>  */}
+
         <br /><br />
         <div style={{fontSize: "12px",
             color: "#727a98",
