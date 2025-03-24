@@ -25,6 +25,8 @@ const INCLEN = () => {
   const dq = urlParams.get("dq") || "N/A";
   const da = urlParams.get("da") || "N/A";
   const INCLENscore = urlParams.get("INCLENscore") || "N/A";
+  const INCLEN_B4 = urlParams.get("INCLEN_B4") || "N/A";
+
 	const formatteddq = isNaN(dq) ? dq : formatToOneDecimal(dq);
   return (
     <>
@@ -75,15 +77,16 @@ const INCLEN = () => {
 
           <br /><br />
 
-          {INCLENscore === 1 ? (
-              <>
-                  The scores of INDT-ASD were indicating that the child has Autism Spectrum Disorder.
-              </>
-          ) : (
-              <>
-                  The scores of INDT-ASD were indicating that the child does not have Autism Spectrum Disorder.
-              </>
+          {(INCLENscore === "1" || (INCLENscore === "0" && INCLEN_B4 === "1")) ? (
+                <>
+                    The scores of INDT-ASD were indicating that the child has Autism Spectrum Disorder.
+                </>
+            ) : (
+                <>
+                    The scores of INDT-ASD were indicating that the child does not have Autism Spectrum Disorder.
+                </>
           )}
+
 
           <br /><br />
       </div>
