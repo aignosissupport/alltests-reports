@@ -93,11 +93,11 @@ const INCLEN = () => {
       <br /><br />
 
         
-        <div id="patientData" style={{fontSize:"larger"}}>
+        {/* <div id="patientData" style={{fontSize:"larger"}}>
           <div><span className="label" >Patient Name:</span> <span id="isaapatientNamecell">{name}</span></div>
           <div><span className="label">Age:</span> <span id="chronologicalAgecell">{age}</span></div>
         </div>
-        <br /><br />
+        <br /><br /> */}
         {/* <h2 style={{textAlign:"left"}}>ISAA Score: <span id="isaascore">{SQ} </span></h2>
         <p style={{textAlign:"left"}}>Interpretation: <span id="SAmessage">{SA}</span></p> */}
 
