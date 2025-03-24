@@ -226,8 +226,7 @@ domain.</p> */}
             </>
           ) : (
             <>
-              The Scores on ISAA were indicative of ({patientData.TOT_ISAA}) {patientData.isaaInterpretation} 
-              degree of autistic traits being present in the child.
+              The Scores on ISAA were indicative of ({patientData.TOT_ISAA}) {patientData.isaaInterpretation} degree of autistic traits being present in the child.
             </>
           )
         } 
