@@ -25,7 +25,17 @@ const INCLEN = () => {
   const dq = urlParams.get("dq") || "N/A";
   const da = urlParams.get("da") || "N/A";
   const INCLENscore = urlParams.get("INCLENscore") || "N/A";
+  const INCLEN_B1 = urlParams.get("INCLEN_B1") || "N/A";
+  const INCLEN_B2 = urlParams.get("INCLEN_B2") || "N/A";
+  const INCLEN_B3 = urlParams.get("INCLEN_B3") || "N/A";
   const INCLEN_B4 = urlParams.get("INCLEN_B4") || "N/A";
+  const INCLEN_B5 = urlParams.get("INCLEN_B5") || "N/A";
+  const INCLEN_B6 = urlParams.get("INCLEN_B6") || "N/A";
+  const INCLEN_B7 = urlParams.get("INCLEN_B7") || "N/A";
+  const INCLEN_B8 = urlParams.get("INCLEN_B8") || "N/A";
+  const INCLEN_B9 = urlParams.get("INCLEN_B9") || "N/A";
+  const INCLEN_B10 = urlParams.get("INCLEN_B10") || "N/A";
+const INCLEN_B11 = urlParams.get("INCLEN_B11") || "N/A";
 
 	const formatteddq = isNaN(dq) ? dq : formatToOneDecimal(dq);
   return (
@@ -84,36 +94,36 @@ const INCLEN = () => {
                     <th style={{ border: "1px solid #d1d5db", borderRight:"0px" ,  padding: "8px" }}>Score</th>
                 </tr>
                 <tr>
-                    <td style={{ border: "1px solid #d1d5db", borderLeft:"0px",  padding: "8px" }}>Self Help General</td>
-                    <td style={{ border: "1px solid #d1d5db", borderRight:"0px" ,  padding: "8px" }}>{SHG}</td>
+                    <td style={{ border: "1px solid #d1d5db", borderLeft:"0px",  padding: "8px" }}>Social Interaction</td> 
+                    <td style={{ border: "1px solid #d1d5db", borderRight:"0px" ,  padding: "8px" }}>{INCLEN_B1}</td>
                 </tr>
                 <tr>
-                    <td style={{ border: "1px solid #d1d5db", borderLeft:"0px",   padding: "8px" }}>Self Help Eating</td>
-                    <td style={{ border: "1px solid #d1d5db",borderRight:"0px" ,  padding: "8px" }}>{SHE}</td>
+                    <td style={{ border: "1px solid #d1d5db", borderLeft:"0px",   padding: "8px" }}>Comuniction</td> 
+                    <td style={{ border: "1px solid #d1d5db",borderRight:"0px" ,  padding: "8px" }}>{INCLEN_B2}</td>
                 </tr>
                 <tr>
-                    <td style={{ border: "1px solid #d1d5db", borderLeft:"0px",   padding: "8px" }}>Self Help Dressing</td>
-                    <td style={{ border: "1px solid #d1d5db", borderRight:"0px" ,  padding: "8px" }}>{SHD}</td>
+                    <td style={{ border: "1px solid #d1d5db", borderLeft:"0px",   padding: "8px" }}>Restricted Interests</td> 
+                    <td style={{ border: "1px solid #d1d5db", borderRight:"0px" ,  padding: "8px" }}>{INCLEN_B3}</td>
                 </tr>
                 <tr>
-                    <td style={{ border: "1px solid #d1d5db", borderLeft:"0px",  padding: "8px" }}>Self- Direction</td>
-                    <td style={{ border: "1px solid #d1d5db", borderRight:"0px" ,  padding: "8px" }}>{SD}</td>
+                    <td style={{ border: "1px solid #d1d5db", borderLeft:"0px",  padding: "8px" }}>Early Onset</td> b7
+                    <td style={{ border: "1px solid #d1d5db", borderRight:"0px" ,  padding: "8px" }}>{INCLEN_B7}</td>
                 </tr>
                 <tr>
-                    <td style={{ border: "1px solid #d1d5db", borderLeft:"0px",  padding: "8px" }}>Occupation</td>
-                    <td style={{ border: "1px solid #d1d5db", borderRight:"0px" ,  padding: "8px" }}>{OCC}</td>
+                    <td style={{ border: "1px solid #d1d5db", borderLeft:"0px",  padding: "8px" }}>Impaired function</td> 
+                    <td style={{ border: "1px solid #d1d5db", borderRight:"0px" ,  padding: "8px" }}>{INCLEN_B6}</td>
                 </tr>
                 <tr>
-                    <td style={{ border: "1px solid #d1d5db", borderLeft:"0px",  padding: "8px" }}>Communication</td>
-                    <td style={{ border: "1px solid #d1d5db", borderRight:"0px" ,  padding: "8px" }}>{COM}</td>
+                    <td style={{ border: "1px solid #d1d5db", borderLeft:"0px",  padding: "8px" }}>Interpretation</td> 
+                    <td style={{ border: "1px solid #d1d5db", borderRight:"0px" ,  padding: "8px" }}>{INCLEN_B4}</td>
                 </tr>
                 <tr>
-                    <td style={{ border: "1px solid #d1d5db", borderLeft:"0px",  padding: "8px" }}>Locomotion</td>
-                    <td style={{ border: "1px solid #d1d5db", borderRight:"0px" ,  padding: "8px" }}>{LOC}</td>
+                    <td style={{ border: "1px solid #d1d5db", borderLeft:"0px",  padding: "8px" }}>Total Number of Criteria fulfilled</td> 
+                    <td style={{ border: "1px solid #d1d5db", borderRight:"0px" ,  padding: "8px" }}>{INCLEN_B5}</td>
                 </tr>
                 <tr>
-                    <td style={{ border: "1px solid #d1d5db", borderLeft:"0px",  padding: "8px" }}>Socialization</td>
-                    <td style={{ border: "1px solid #d1d5db", borderRight:"0px" ,  padding: "8px" }}>{SOC}</td>
+                    <td style={{ border: "1px solid #d1d5db", borderLeft:"0px",  padding: "8px" }}>Summary Assesment of ASD</td> 
+                    <td style={{ border: "1px solid #d1d5db", borderRight:"0px" ,  padding: "8px" }}>{INCLEN_B11}</td>
                 </tr>
           </table> 
           </center> 
