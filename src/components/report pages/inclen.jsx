@@ -77,7 +77,7 @@ const INCLEN = () => {
 
           <br /><br />
 
-          {(INCLENscore === "1" || (INCLENscore === "0" && INCLEN_B4 === "1")) ? (
+          {(INCLENscore === "1" || (INCLENscore === "0" && INCLEN_B4.charAt(0) === "1")) ? (
                 <>
                     The scores of INDT-ASD were indicating that the child has Autism Spectrum Disorder.
                 </>
