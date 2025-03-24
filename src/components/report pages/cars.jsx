@@ -109,14 +109,14 @@ const CARS = () => {
                 </table> 
         </center> 
         <br /><br /><br />
-        <div style={{fontSize: "12px",
+        {/* <div style={{fontSize: "12px",
             color: "#727a98",
             fontFamily: `"Times New Roman", Times, serif`,
             fontWeight: "600",
             lineHeight: "15px",
-            textAlign:"justify"}}>
-            <p>The scores of CARS were indicating that the child has {carsInterpretation} Spectrum Disorder.</p>
-        </div>
+            textAlign:"justify"}}> */}
+            <>The scores of CARS were indicating that the child has {carsInterpretation} Spectrum Disorder.</>
+        {/* </div> */}
         {/* <h2 style={{textAlign:"left"}}>ISAA Score: <span id="isaascore">{TOT_CARS} </span></h2>
         <p style={{textAlign:"left"}}>Interpretation: <span id="carsInterpretationmessage">{carsInterpretation}</span></p> */}
 
