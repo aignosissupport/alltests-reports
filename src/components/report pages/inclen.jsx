@@ -107,7 +107,7 @@ const INCLEN = () => {
                     <td style={{ border: "1px solid #d1d5db", borderRight:"0px" ,  padding: "8px" }}>{INCLEN_B1.charAt(0)}</td>
                 </tr>
                 <tr>
-                    <td style={{ border: "1px solid #d1d5db", borderLeft:"0px",   padding: "8px" }}>Comuniction</td> 
+                    <td style={{ border: "1px solid #d1d5db", borderLeft:"0px",   padding: "8px" }}>Comunication</td> 
                     <td style={{ border: "1px solid #d1d5db",borderRight:"0px" ,  padding: "8px" }}>{INCLEN_B2.charAt(0)}</td>
                 </tr>
                 <tr>
