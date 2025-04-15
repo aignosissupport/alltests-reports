@@ -11,7 +11,7 @@ const MCHAT = () => {
   };
   const age=(getURLParameter("Age") || "N/A") + " Years";
   const formatToOneDecimal = (value) => parseFloat(value).toFixed(1);
-  const name=getURLParameter("Name") || "N/A";  
+  const name = (getURLParameter("Name") || "N/A").trim();
   const currentDate = new Date().toLocaleDateString();
   const mchatScore = getURLParameter("MCHATscore") || "N/A";
   const MCHATinterpretation = getURLParameter("MCHATinterpretation") || "N/A";
