@@ -39,7 +39,7 @@ const ISAA = () => {
     cognitiveComponent: parseFloat(getURLParameter("cognitive")) || 0,
     TOT_ISAA: parseFloat(getURLParameter("TOT_ISAA")) || 0,
     isaaInterpretation: getURLParameter("isaaInterpretation") || "N/A",
-    name:getURLParameter("name") || "N/A",
+    name:getURLParameter("Name") || "N/A",
   };
   const currentDate = new Date().toLocaleDateString();
   const displayData = () => {
