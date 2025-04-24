@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import Chart from 'chart.js/auto';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 const INCLEN = () => {
