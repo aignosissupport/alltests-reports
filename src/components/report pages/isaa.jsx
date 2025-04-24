@@ -31,13 +31,13 @@ const ISAA = () => {
   const formatToOneDecimal = (value) => parseFloat(value).toFixed(1);
   const patientData = {
     patientId: getURLParameter("patient_id"),
-    socialResponsiveness: parseFloat(getURLParameter("social_response")) || 0,
-    emotionalResponsiveness: parseFloat(getURLParameter("emotional_response")) || 0,
-    speechRecognition: parseFloat(getURLParameter("speech_recognition")) || 0,
-    behaviouralPattern: parseFloat(getURLParameter("behaviour_pattern")) || 0,
-    sensoryAspects: parseFloat(getURLParameter("sensory_aspect")) || 0,
-    cognitiveComponent: parseFloat(getURLParameter("cognitive")) || 0,
-    TOT_ISAA: parseFloat(getURLParameter("TOT_ISAA")) || 0,
+    socialResponsiveness: parseFloat(getURLParameter("social_response")) || "N/A",
+    emotionalResponsiveness: parseFloat(getURLParameter("emotional_response")) || "N/A",
+    speechRecognition: parseFloat(getURLParameter("speech_recognition")) || "N/A",
+    behaviouralPattern: parseFloat(getURLParameter("behaviour_pattern")) || "N/A",
+    sensoryAspects: parseFloat(getURLParameter("sensory_aspect")) || "N/A",
+    cognitiveComponent: parseFloat(getURLParameter("cognitive")) || "N/A",
+    TOT_ISAA: parseFloat(getURLParameter("TOT_ISAA")) || "N/A",
     isaaInterpretation: getURLParameter("isaaInterpretation") || "N/A",
     name:getURLParameter("Name") || "N/A",
   };
