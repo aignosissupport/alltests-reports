@@ -97,12 +97,12 @@ const ISAA = () => {
         <div className="mt-12 text-gray-800">
           {patientData.TOT_ISAA >= 63 && patientData.TOT_ISAA <= 69 ? (
             <p>
-              The Score on ISAA ({patientData.TOT_ISAA}) suggests the presence of some autistic traits, 
+              The Score on ISAA {patientData.TOT_ISAA} suggests the presence of some autistic traits, 
               although they do not meet the threshold for a conclusive diagnosis of autism spectrum disorder.
             </p>
           ) : (
             <p>
-              The Scores on ISAA were indicative of ({patientData.TOT_ISAA}) {patientData.isaaInterpretation} degree of autistic traits being present in the child.
+              The score of {patientData.TOT_ISAA} on ISAA test were indicative of {patientData.isaaInterpretation} degree of autistic traits being present in the child.
             </p>
           )}
         </div>
