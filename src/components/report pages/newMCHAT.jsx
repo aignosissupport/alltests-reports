@@ -73,7 +73,7 @@ const MCHAT = () => {
         <p className="mt-8 pt-8 text-justify text-gray-700">
         The caregiver of {patientData.name} completed the MCHAT-R, 
         and based on the results, the child scored a total of {patientData.mchatScore}. 
-        This score indicates that {patientData.name} falls within the {patientData.MCHATinterpretation} risk range for Autism..
+        This score indicates that {patientData.name} falls within the {patientData.MCHATinterpretation} risk range for Autism.
         </p>
 
         <div className="absolute bottom-8 left-8 right-8 flex justify-between text-xs text-gray-500 border-t border-purple-800 pt-2">
