@@ -77,7 +77,7 @@ const ISAA = () => {
           Date of Assessment: <span className="font-semibold">{patientData.doa}</span>
         </p>
 
-        <table className="w-[60%] mx-auto mt-6 pt-4 text-sm border border-gray-300">
+        <table className="w-[60%] mx-auto mt-6 pt-12 text-sm border border-gray-300">
           <thead className="bg-gray-100">
             <tr>
               <th className="border border-gray-300 px-4 py-2 text-center">Domain</th>
