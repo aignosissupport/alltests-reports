@@ -102,7 +102,7 @@ const ISAA = () => {
             </p>
           ) : (
             <p>
-              The score of {patientData.TOT_ISAA} on ISAA test were indicative of {patientData.isaaInterpretation} degree of autistic traits being present in the child.
+              The score of {patientData.TOT_ISAA} on ISAA test were indicative of {patientData.isaaInterpretation} being present in the child.
             </p>
           )}
         </div>
