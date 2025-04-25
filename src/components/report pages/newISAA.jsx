@@ -71,13 +71,13 @@ const ISAA = () => {
           and supplemented by parents or caretakers in order to diagnose autism.
           ISAA consists of 40 items rated on a 5 scale ranging from 1 (never) to 5 (always).
         </p>
-        <p className="mt-2 text-left text-gray-700">
+        <p className="mt-2 pt-4 text-left text-gray-700">
           Name: <span className="font-semibold">{patientData.name}</span><br />
           Date of Birth: <span className="font-semibold">{patientData.dob}</span><br />
           Date of Assessment: <span className="font-semibold">{patientData.doa}</span>
         </p>
 
-        <table className="w-[60%] mx-auto mt-6 text-sm border border-gray-300">
+        <table className="w-[60%] mx-auto mt-6 pt-4 text-sm border border-gray-300">
           <thead className="bg-gray-100">
             <tr>
               <th className="border border-gray-300 px-4 py-2 text-center">Domain</th>
