@@ -59,8 +59,8 @@ const ISAA = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center p-8 bg-white min-h-screen font-sans">
-      <div className="bg-white p-6 shadow-lg rounded-xl w-full max-w-[800px]">
+    <div className="pdf-image flex flex-col font-manrope items-center p-8 bg-white min-h-screen" >
+    <div className="pdf-page bg-white p-8 shadow-md rounded-md w-[210mm] h-[297mm]">
         <h1 className="text-sm font-semibold text-left text-purple-700">Indian Scale for Assessment of Autism Report</h1>
         <div className="w-full border-t-2 mt-2 border-purple-700"></div>
 
