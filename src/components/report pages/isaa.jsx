@@ -27,10 +27,17 @@ const ISAA = () => {
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get(name);
   };
-
-  const formatToOneDecimal = (value) => parseFloat(value).toFixed(1);
+  
+  const formatDate = (dobRaw) => {
+    if (!dobRaw) return "N/A";
+    const parts = dobRaw.split("/");
+    if (parts.length !== 3) return dobRaw; // fallback in case it's not in expected format
+    return `${parts[1]}/${parts[0]}/${parts[2]}`; // dd/mm/yyyy
+  };
+  
   const patientData = {
-    patientId: getURLParameter("patient_id"),
+    dob: formatDate(getURLParameter("Date_of_Birth")) || "N/A",
+    doa: formatDate(getURLParameter("Date_of_Assessment")) || "N/A",
     socialResponsiveness: parseFloat(getURLParameter("social_response")) || "N/A",
     emotionalResponsiveness: parseFloat(getURLParameter("emotional_response")) || "N/A",
     speechRecognition: parseFloat(getURLParameter("speech_recognition")) || "N/A",
@@ -39,8 +46,9 @@ const ISAA = () => {
     cognitiveComponent: parseFloat(getURLParameter("cognitive")) || "N/A",
     TOT_ISAA: parseFloat(getURLParameter("TOT_ISAA")) || "N/A",
     isaaInterpretation: getURLParameter("isaaInterpretation") || "N/A",
-    name:getURLParameter("Name") || "N/A",
+    name: getURLParameter("Name") || "N/A",
   };
+  
   const currentDate = new Date().toLocaleDateString();
   const displayData = () => {
     
@@ -162,14 +170,20 @@ const createBarChart = (data) => {
             color: "#94059f",
             }}>Developmental <span style={{color:"black"}}> Screening</span>
         </h1>
-        <div style={{textAlign:"justify"}}>
-        ISAA is an objective tool for persons with autism that uses observations, clinical evaluations of behaviors, testing by interaction with subjects and supplemented by parents or caretakers in order to diagnose autism. ISAA consists of 40 items rated on a 5 scale ranging from 1 (never) to 5 (always). The 40 items on ISAA are further divided into the following sub scales.
-                <br />
-                {/* The system provides outputs as <span id="isaaInterpretationmessage"
-                    style={{fontSize: "15px", color: "#007bff"}}> {patientData.isaaInterpretation}</span> and the Aignosis ISAA test output was: <span id='isaascore'
-                    style={{fontSize: "xx-large", color: "#007bff"}}>{patientData.TOT_ISAA}</span> 
-                <br /><br /> */}
+        <div style={{ textAlign: "justify" }}>
+          ISAA is an objective tool for persons with autism that uses observations,
+          clinical evaluations of behaviors, testing by interaction with subjects,
+          and supplemented by parents or caretakers in order to diagnose autism.
+          ISAA consists of 40 items rated on a 5 scale ranging from 1 (never) to 5 (always).
+          The 40 items on ISAA are further divided into the following sub scales.
+          <br />
+          Name: {patientData.name}
+          <br />
+          Date of Birth: {patientData.dob}
+          <br />
+          Date of Assessment: {patientData.doa}
         </div>
+
         
         {/* <div id="patientData" style={{fontSize:"larger"}}>
           <div><span className="label" >Patient Name:</span> <span id="isaapatientNamecell"></span></div>
@@ -235,11 +249,11 @@ domain.</p> */}
         <br />
         <div className="w-full flex justify-between items-center text-xs font-manrope mt-10 border-t-2 border-[#800080] pt-2">
                     <span className='text-[10px]'>ISAA Report - {patientData.name}</span>
-                    <div className="text-center text-[10px]">
+                    {/* <div className="text-center text-[10px]">
                         <span></span>
                         <br />
                         <span>ID: Report Generation Date: {currentDate}</span>
-                    </div>
+                    </div> */}
                     <span className='text-[10px]'>Page 08</span>
         </div>
         {domainNames.map((domain, index) => (
