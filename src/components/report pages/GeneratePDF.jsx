@@ -9,7 +9,7 @@ import Page5 from './Page5';
 import Commnpdfpage from './Commnpdfpage';
 import imglogo from '/aignosislogo.png';
 import { AppContext } from "../../AppContext";
-import ISAA from './isaa';
+import ISAA from './newISAA';
 import ISAA2 from './isaa2';
 import ISAA3 from './isaa3';
 import ISAA4 from './isaa4';
