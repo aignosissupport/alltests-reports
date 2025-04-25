@@ -25,8 +25,8 @@ const MCHAT = () => {
     dob: formatDate(getURLParameter("Date_of_Birth")) || "N/A",
     doa: formatDate(getURLParameter("Date_of_Assessment")) || "N/A",
     name: getURLParameter("Name") || "N/A",
-    mchatScore: getURLParameter("MCHATscore") || "N/A",
-    MCHATinterpretation: getURLParameter("MCHATinterpretation") || "N/A"
+    TOT_CARS: getURLParameter("TOT_CARS") || "N/A",
+    carsInterpretation: getURLParameter("carsInterpretation") || "N/A"
   };
 
 
@@ -37,16 +37,16 @@ const MCHAT = () => {
   return (
     <div className="pdf-image flex flex-col font-manrope items-center p-8 bg-white min-h-screen relative" >
     <div className="pdf-page bg-white p-8 shadow-md rounded-md w-[210mm] h-[297mm] relative">
-        <h1 className="text-sm font-semibold text-left text-purple-700">Modified Checklist for Autism in Toddlers Report</h1>
+        <h1 className="text-sm font-semibold text-left text-purple-700">Childhood Autism Rating Scale Report</h1>
         <div className="w-full border-t-2 mt-2 border-purple-700"></div>
 
-        <h2 className="text-2xl font-bold text-purple-800 mt-6">MCHAT <span className="text-black">Screening</span></h2>
+        <h2 className="text-2xl font-bold text-purple-800 mt-6">CARS <span className="text-black">Screening</span></h2>
         
         <p className="mt-4 text-justify text-gray-700">
-        The Modified Checklist for Autism in Toddlers, 
-        Revised (MCHAT-R) is a standardized screening tool designed to assess behavioral development in toddlers aged 16-30 months. 
-        This 20-question screener evaluates various aspects of a child's behavior, 
-        providing insight into their developmental progress.
+        Autism Screening Measure: The childhood Autism Rating Scale-2 (CARS-2), 
+        which is a 15- item behavioral rating scale. 
+        It is designed as a screening tool to identify children with autism and help 
+        identify possible signs of autism (or autism spectrum disorder). 
         </p>
 
         <p className="mt-2 pt-4 text-left text-gray-700">
@@ -55,29 +55,25 @@ const MCHAT = () => {
           Date of Assessment: <span className="font-semibold">{patientData.doa}</span>
         </p>
 
+        <p className="mt-4 text-justify text-gray-700">
+        The CARS-2 ratings are comprised of behavioral observations, parental reports, 
+        and a review of relevant records. Scores are as follows:
+        </p>
+
         <table className="w-[60%] mx-auto mt-20 text-sm border border-gray-300">
           <thead className="bg-gray-100">
             <tr>
-              <th className="border border-gray-300 px-4 py-2 text-center">Score Range</th>
+              <th className="border border-gray-300 px-4 py-2 text-center">Raw Score</th>
               <th className="border border-gray-300 px-4 py-2 text-center">Classification</th>
             </tr>
           </thead>
           <tbody>
-            <tr><td className="border px-4 py-2">0-2</td><td className="border px-4 py-2">Low Risk of Autism</td></tr>
-            <tr><td className="border px-4 py-2">3-7</td><td className="border px-4 py-2">Mild Risk of Autism</td></tr>
-            <tr><td className="border px-4 py-2">8-20+</td><td className="border px-4 py-2">Severe Risk of Autism</td></tr>
-            <tr><td className="border px-4 py-2">Greater than 153</td><td className="border px-4 py-2">Severe Autism</td></tr>
+            <tr><td className="border px-4 py-2">{patientData.TOT_CARS}</td><td className="border px-4 py-2">{patientData.carsInterpretation}</td></tr>
           </tbody>
         </table>
 
-        <p className="mt-8 pt-8 text-justify text-gray-700">
-        The caregiver of {patientData.name} completed the MCHAT-R, 
-        and based on the results, the child scored a total of {patientData.mchatScore}. 
-        This score indicates that {patientData.name} falls within the {patientData.MCHATinterpretation} risk range for Autism.
-        </p>
-
         <div className="absolute bottom-8 left-8 right-8 flex justify-between text-xs text-gray-500 border-t border-purple-800 pt-2">
-            <span>MCHAT Report - {patientData.name}</span>
+            <span>CARS Report - {patientData.name}</span>
             <span>Page 08</span>
         </div>
       </div>
