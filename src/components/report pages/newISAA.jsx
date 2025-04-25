@@ -64,7 +64,7 @@ const ISAA = () => {
         <h1 className="text-sm font-semibold text-left text-purple-700">Indian Scale for Assessment of Autism Report</h1>
         <div className="w-full border-t-2 mt-2 border-purple-700"></div>
 
-        <h2 className="text-2xl font-bold text-purple-800 mt-6">Developmental <span className="text-black">Screening</span></h2>
+        <h2 className="text-2xl font-bold text-purple-800 mt-6">ISAA <span className="text-black">Screening</span></h2>
         <p className="mt-4 text-justify text-gray-700">
           ISAA is an objective tool for persons with autism that uses observations,
           clinical evaluations of behaviors, testing by interaction with subjects,
@@ -109,7 +109,7 @@ const ISAA = () => {
 
         <div className="absolute bottom-8 left-8 right-8 flex justify-between text-xs text-gray-500 border-t border-purple-800 pt-2">
             <span>ISAA Report - {patientData.name}</span>
-            <span>Page 08</span>
+            {/* <span>Page 08</span> */}
         </div>
       </div>
     </div>

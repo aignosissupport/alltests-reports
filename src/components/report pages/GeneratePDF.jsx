@@ -22,77 +22,65 @@ import CARS3 from './cars3';
 import INCLEN from './newINCLEN';
 const pdfData = [
     {
-        url:'https://prod-aignosis-terraform-state.s3.ap-south-1.amazonaws.com/1738767409455_page1.png',
-        alttext:'report first page',
+        url:'https://storage.googleapis.com/aignosis_static_assets/Screening-Report/page1.1.png',
+        alttext:'report page 1',
     },
     {
-        url:'https://prod-aignosis-terraform-state.s3.ap-south-1.amazonaws.com/1738767504591_page2.png',
-        alttext:'report second page',
+        url:'https://storage.googleapis.com/aignosis_static_assets/Screening-Report/page1.2.png',
+        alttext:'report page 2',
     },
     {
-        url:'https://prod-aignosis-terraform-state.s3.ap-south-1.amazonaws.com/1738768231265_page3.png',
-        alttext:'report third page',
+        url:'https://storage.googleapis.com/aignosis_static_assets/Screening-Report/page1.3.png',
+        alttext:'report page 3',
     },
     {
-        url:'https://prod-aignosis-terraform-state.s3.ap-south-1.amazonaws.com/1738768279180_page4.png',
-        alttext:'report four page',
+        url:'https://storage.googleapis.com/aignosis_static_assets/Screening-Report/page1.4.png',
+        alttext:'report page 4',
     },
     {
-        url:'https://prod-aignosis-terraform-state.s3.ap-south-1.amazonaws.com/1738768308524_page5.png',
-        alttext:'report fifth page',
+        url:'https://storage.googleapis.com/aignosis_static_assets/Screening-Report/page1.5.png',
+        alttext:'report page 5',
     },
     {
-        url:'https://prod-aignosis-terraform-state.s3.ap-south-1.amazonaws.com/1738768377852_page6.png',
-        alttext:'report six page',
+        url:'https://storage.googleapis.com/aignosis_static_assets/Screening-Report/page1.6.png',
+        alttext:'report page 6',
     },
     {
-        url:'https://prod-aignosis-terraform-state.s3.ap-south-1.amazonaws.com/1738768391375_page7.png',
-        alttext:'report seven page',
+        url:'https://storage.googleapis.com/aignosis_static_assets/Screening-Report/page1.7.png',
+        alttext:'report page 7',
     },
 ]
 
 
 const SecondpdfData = [
-    // {
-    //     url:'https://prod-aignosis-terraform-state.s3.ap-south-1.amazonaws.com/1738768677082_page8.png',
-    //     alttext:'report eight page',
-    // },
-    // {
-    //     url:'https://prod-aignosis-terraform-state.s3.ap-south-1.amazonaws.com/1738768918579_page9.png',
-    //     alttext:'report nine page',
-    // },
-    {
-        url:'https://prod-aignosis-terraform-state.s3.ap-south-1.amazonaws.com/1738768941181_page10.png',
-        alttext:'report ten page',
-    },
-    {
-        url:'https://prod-aignosis-terraform-state.s3.ap-south-1.amazonaws.com/1738768955924_page11.png',
-        alttext:'report eleven page',
-    },
-    {
-        url:'https://prod-aignosis-terraform-state.s3.ap-south-1.amazonaws.com/1738769196127_page12.png',
-        alttext:'report tweleve page',
-    },
-    {
-        url:'https://prod-aignosis-terraform-state.s3.ap-south-1.amazonaws.com/1738769245551_page13.png',
-        alttext:'report thireteen page',
-    },
-    {
-        url:'https://prod-aignosis-terraform-state.s3.ap-south-1.amazonaws.com/1738769259360_page14.png',
-        alttext:'report  page 14',
-    },
-    {
-        url:'https://prod-aignosis-terraform-state.s3.ap-south-1.amazonaws.com/1738769273519_page15.png',
-        alttext:'report page 15',
-    },
-    {
-        url:'https://prod-aignosis-terraform-state.s3.ap-south-1.amazonaws.com/1738769286119_page16.png',
-        alttext:'report page 16',
-    },
-    {
-        url:'https://prod-aignosis-terraform-state.s3.ap-south-1.amazonaws.com/1738769299141_page17.png',
-        alttext:'report page 17',
-    },
+  {
+    url:'https://storage.googleapis.com/aignosis_static_assets/Screening-Report/page2.1.png',
+    alttext:'report page 13',
+},
+{
+    url:'https://storage.googleapis.com/aignosis_static_assets/Screening-Report/page2.2.png',
+    alttext:'report page 14',
+},
+{
+    url:'https://storage.googleapis.com/aignosis_static_assets/Screening-Report/page2.3.png',
+    alttext:'report page 14',
+},
+{
+    url:'https://storage.googleapis.com/aignosis_static_assets/Screening-Report/page2.4.png',
+    alttext:'report page 15',
+},
+{
+    url:'https://storage.googleapis.com/aignosis_static_assets/Screening-Report/page2.5.png',
+    alttext:'report page 16',
+},
+{
+    url:'https://storage.googleapis.com/aignosis_static_assets/Screening-Report/page2.6.png',
+    alttext:'report page 17',
+},
+{
+    url:'https://storage.googleapis.com/aignosis_static_assets/Screening-Report/page2.7.png',
+    alttext:'report page 18',
+},
 ]
 
 // const ComponentToPrint = React.forwardRef((props, ref) => (

@@ -94,7 +94,7 @@ const INCLEN = () => {
 
         <div className="absolute bottom-8 left-8 right-8 flex justify-between text-xs text-gray-500 border-t border-purple-800 pt-2">
             <span>INCLEN Report - {patientData.name}</span>
-            <span>Page 08</span>
+            {/* <span>Page 08</span> */}
         </div>
       </div>
     </div>
