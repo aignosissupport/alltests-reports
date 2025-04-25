@@ -196,12 +196,7 @@ const createBarChart = (data) => {
           Date of Assessment: {patientData.doa}
         </div>
 
-        
-        {/* <div id="patientData" style={{fontSize:"larger"}}>
-          <div><span className="label" >Patient Name:</span> <span id="isaapatientNamecell"></span></div>
-          <div><span className="label">Age:</span> <span id="chronologicalAgecell"></span></div>
-        </div> */}
-        <br /><br />
+        <br />
         <center>
         <table border="4" style={{width: "50%", textAlign: "center", marginTop: "10px", border: "1px solid #d1d5db" , padding: "8px" }}>
                     <tr >
