@@ -13,7 +13,7 @@ import ISAA from './newISAA';
 import ISAA2 from './isaa2';
 import ISAA3 from './isaa3';
 import ISAA4 from './isaa4';
-import MCHAT from './mchat';
+import MCHAT from './newMCHAT';
 import MCHAT2 from './mchat2';
 import MCHAT3 from './mchat3';
 import CARS from './cars';
