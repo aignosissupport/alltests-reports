@@ -94,7 +94,7 @@ const ISAA = () => {
           </tbody>
         </table>
 
-        <div className="mt-6 text-gray-800">
+        <div className="mt-12 text-gray-800">
           {patientData.TOT_ISAA >= 63 && patientData.TOT_ISAA <= 69 ? (
             <p>
               The Score on ISAA ({patientData.TOT_ISAA}) suggests the presence of some autistic traits, 

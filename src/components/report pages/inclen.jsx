@@ -122,7 +122,7 @@ const INCLEN = () => {
                     <td style={{ border: "1px solid #d1d5db", borderRight:"0px" ,  padding: "8px" }}>{INCLEN_B6}</td>
                 </tr>
                 <tr>
-                    <td style={{ border: "1px solid #d1d5db", borderLeft:"0px",  padding: "8px" }}>Interpretation</td> 
+                    <td style={{ border: "1px solid #d1d5db", borderLeft:"0px",  padding: "8px" }}>Impaired function</td> 
                     <td style={{ border: "1px solid #d1d5db", borderRight:"0px" ,  padding: "8px" }}>{INCLEN_B4.charAt(0)}</td>
                 </tr>
                 <tr>

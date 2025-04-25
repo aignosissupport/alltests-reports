@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import Chart from 'chart.js/auto';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 
-const MCHAT = () => {
+const CARS = () => {
 
   const getURLParameter = (name) => {
     const urlParams = new URLSearchParams(window.location.search);
@@ -81,4 +81,4 @@ const MCHAT = () => {
   );
 };
 
-export default MCHAT;
+export default CARS;

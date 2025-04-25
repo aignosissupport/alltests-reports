@@ -19,7 +19,7 @@ import MCHAT3 from './mchat3';
 import CARS from './newCARS';
 import CARS2 from './cars2';
 import CARS3 from './cars3';
-import INCLEN from './inclen';
+import INCLEN from './newINCLEN';
 const pdfData = [
     {
         url:'https://prod-aignosis-terraform-state.s3.ap-south-1.amazonaws.com/1738767409455_page1.png',
