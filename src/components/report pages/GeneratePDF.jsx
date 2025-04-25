@@ -62,7 +62,7 @@ const SecondpdfData = [
     alttext:'report page 14',
 },
 {
-    url:'https://storage.googleapis.com/aignosis_static_assets/Screening-Report/page2.3.png',
+    url:'https://storage.googleapis.com/aignosis_static_assets/Screening-Report/page2.3.jpg',
     alttext:'report page 14',
 },
 {
@@ -113,20 +113,11 @@ const ComponentToPrint = React.forwardRef(({ isisaaChecked, ismchatChecked, isca
     ))}
 
         <div className="pdf-page isaa-page"><ISAA /></div>
-        {/* <div className="pdf-page isaa-page"><ISAA2 /></div>
-        <div className="pdf-page isaa-page"><ISAA3 /></div>
-        <div className="pdf-page isaa-page"><ISAA4 /></div> */}
-
 
          <div className="pdf-page isaa-page"><MCHAT /></div>
-        {/* <div className="pdf-page isaa-page"><MCHAT2 /></div>
-        <div className="pdf-page isaa-page"><MCHAT3 /></div> */}
 
-
-    
         <div className="pdf-page isaa-page"><CARS /></div>
-        {/* <div className="pdf-page isaa-page"><CARS2 /></div>
-        <div className="pdf-page isaa-page"><CARS3 /></div>  */}
+
         <div className="pdf-page isaa-page"><INCLEN /></div>
 
 
@@ -298,3 +289,5 @@ const GeneratePDF = () => {
 };
   
   export default GeneratePDF;
+
+
