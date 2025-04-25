@@ -28,11 +28,23 @@ const ISAA = () => {
     return urlParams.get(name);
   };
   
-  const formatDate = (dobRaw) => {
-    if (!dobRaw) return "N/A";
-    const parts = dobRaw.split("/");
-    if (parts.length !== 3) return dobRaw; // fallback in case it's not in expected format
-    return `${parts[1]}/${parts[0]}/${parts[2]}`; // dd/mm/yyyy
+  const formatDate = (rawDate) => {
+    if (!rawDate) return "N/A";
+  
+    // If it's a number or numeric string (Excel serial date)
+    if (!isNaN(rawDate)) {
+      const excelEpoch = new Date(1899, 11, 30); // Excel's day 1
+      const date = new Date(excelEpoch.getTime() + rawDate * 86400000);
+      const dd = String(date.getDate()).padStart(2, "0");
+      const mm = String(date.getMonth() + 1).padStart(2, "0"); // Months are 0-indexed
+      const yyyy = date.getFullYear();
+      return `${dd}/${mm}/${yyyy}`;
+    }
+  
+    // Else, assume mm/dd/yyyy string and reformat
+    const parts = rawDate.split("/");
+    if (parts.length !== 3) return rawDate;
+    return `${parts[1].padStart(2, "0")}/${parts[0].padStart(2, "0")}/${parts[2]}`;
   };
   
   const patientData = {
@@ -176,7 +188,7 @@ const createBarChart = (data) => {
           and supplemented by parents or caretakers in order to diagnose autism.
           ISAA consists of 40 items rated on a 5 scale ranging from 1 (never) to 5 (always).
           The 40 items on ISAA are further divided into the following sub scales.
-          <br />
+          <br /><br />
           Name: {patientData.name}
           <br />
           Date of Birth: {patientData.dob}
