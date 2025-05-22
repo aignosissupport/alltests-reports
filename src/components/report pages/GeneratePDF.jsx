@@ -1,25 +1,18 @@
 import React, { useRef, useState, useContext } from 'react';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
-import Page1 from './Page1';
-import Page2 from './Page2';
-import Page3 from './Page3';
-import Page4 from './Page4';
-import Page5 from './Page5';
+
 import Commnpdfpage from './Commnpdfpage';
 import imglogo from '/aignosislogo.png';
 import { AppContext } from "../../AppContext";
 import ISAA from './newISAA';
-import ISAA2 from './isaa2';
-import ISAA3 from './isaa3';
-import ISAA4 from './isaa4';
+
 import MCHAT from './newMCHAT';
-import MCHAT2 from './mchat2';
-import MCHAT3 from './mchat3';
+
 import CARS from './newCARS';
-import CARS2 from './cars2';
-import CARS3 from './cars3';
+
 import INCLEN from './newINCLEN';
+import PatientHistory from './PatientHistory';
 const pdfData = [
     {
         url:'https://storage.googleapis.com/aignosis_static_assets/Screening-Report/page1.1.png',
@@ -106,15 +99,17 @@ const SecondpdfData = [
 //     ))}
 //     </div>
 // ));
-const ComponentToPrint = React.forwardRef(({ isisaaChecked, ismchatChecked, iscarsChecked }, ref) => (
+const ComponentToPrint = React.forwardRef(({ isisaaChecked, ismchatChecked, iscarsChecked, isinclenChecked}, ref) => (
   <div id="pdf-container" ref={ref} style={{ width: "794px", minHeight: "1123px" }}>
     {pdfData.map((item, index) => (
       <Commnpdfpage key={`pdfData-${index}`} src={item.url} alttext={item.alttext} />
     ))}
 
+        <div className='pdf-page isaa-page'><PatientHistory /></div>
+
         <div className="pdf-page isaa-page"><ISAA /></div>
 
-         <div className="pdf-page isaa-page"><MCHAT /></div>
+        <div className="pdf-page isaa-page"><MCHAT /></div>
 
         <div className="pdf-page isaa-page"><CARS /></div>
 
@@ -126,9 +121,6 @@ const ComponentToPrint = React.forwardRef(({ isisaaChecked, ismchatChecked, isca
     ))}
   </div>
 ));
-
-
-
 
 
 const GeneratePDF = () => {
@@ -265,11 +257,12 @@ const GeneratePDF = () => {
       </button>
       
       <ComponentToPrint 
-  ref={componentRef} 
-  isisaaChecked={isisaaChecked} 
-  ismchatChecked={ismchatChecked} 
-  iscarsChecked={iscarsChecked} 
-/>
+        ref={componentRef} 
+        isisaaChecked={isisaaChecked} 
+        ismchatChecked={ismchatChecked} 
+        iscarsChecked={iscarsChecked} 
+        isinclenChecked ={isinclenChecked}
+      />
       <center>
       {loading && (
 
