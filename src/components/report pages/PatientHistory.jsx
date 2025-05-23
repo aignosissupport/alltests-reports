@@ -36,15 +36,16 @@ const ISAA = () => {
 
             // If no number found, return "Not remember"
             return "Not remember";
-        };
+    };
 
-  const formatMedHistory = (input1, input2) =>{
-            if (input1.toLowerCase() !== "None") {
-                return `${input1}, ${input2}`;
-            } else {
-                return `${input1}`;
-            }
-        };
+    const formatMedHistory = (input1, input2) => {
+        if (input1.toLowerCase() !== "none") {
+            return `${input1}, ${input2}`;
+        } else {
+            return `${input1}`;
+        }
+    };
+
 
   const formatSentence = (input1, input2) => {
             if (input1.toLowerCase() === "yes") {
@@ -106,7 +107,7 @@ const ISAA = () => {
     // Family History
     marriage_in_family_relation: getURLParameter("b8") || "N/A",
     family_type: getURLParameter("b9") || "N/A",
-    family_medical_history: formatMedHistory(getURLParameter("b10_1") || "N/A", getURLParameter("b10_2") || "N/A")
+    family_medical_history: formatMedHistory(getURLParameter("b10_1") || "N/A", getURLParameter("b10_2") || "N/A") || "N/A"
 };
 
 
@@ -128,7 +129,7 @@ const ISAA = () => {
         </p> */}
 
         {/* <table className="w-full mx-auto mt text-sm border-collapse"> */}
-        <table className="w-full mx-auto mt text-[11px] border-collapse">
+        <table className="w-full mx-auto mt text-[12px] border-collapse">
           
             <tbody>
                 <tr>
@@ -137,18 +138,18 @@ const ISAA = () => {
                     </th>
                 </tr>
                 <tr>
-                    <td className="text-left px-4 py-2">Name: {patientData.name}</td>
-                    <td className="text-left px-4 py-2">Age: {patientData.age_month}</td>
-                    <td className="text-left px-4 py-2">Gender: {patientData.gender}</td>
+                    <td className="text-left border px-4 py-2">Name: {patientData.name}</td>
+                    <td className="text-left border px-4 py-2">Age: {patientData.age_month}</td>
+                    <td className="text-left border px-4 py-2">Gender: {patientData.gender}</td>
                 </tr>
                 <tr>
-                    <td className="text-left px-4 py-2">Date of Birth: {patientData.dob}</td>
-                    <td className="text-left px-4 py-2">Date of Assessment: {patientData.doa}</td>
-                    <td className="text-left px-4 py-2">Test location: {patientData.test_location}</td>
+                    <td className="text-left border px-4 py-2">Date of Birth: {patientData.dob}</td>
+                    <td className="text-left border px-4 py-2">Date of Assessment: {patientData.doa}</td>
+                    <td className="text-left border px-4 py-2">Test location: {patientData.test_location}</td>
                 </tr>
                 <tr>
-                    <td className="text-left px-4 py-2">Assessor: {patientData.assessor}</td>
-                    <td className="text-left px-4 py-2">Informant: {patientData.informant}</td>
+                    <td className="text-left border px-4 py-2">Assessor: {patientData.assessor}</td>
+                    <td className="text-left border px-4 py-2">Informant: {patientData.informant}</td>
                 </tr>
                 <tr>
                     <th className="text-center underline py-5" colSpan={3}>
@@ -156,19 +157,19 @@ const ISAA = () => {
                     </th>
                 </tr>
                 <tr>
-                    <td className="text-left px-4 py-2">Social Smile: {patientData.social_smile}</td>
-                    <td className="text-left px-4 py-2">Head Control: {patientData.head_control}</td>
-                    <td className="text-left px-4 py-2">Sitting: {patientData.sitting}</td>
+                    <td className="text-left border px-4 py-2">Social Smile: {patientData.social_smile}</td>
+                    <td className="text-left border px-4 py-2">Head Control: {patientData.head_control}</td>
+                    <td className="text-left border px-4 py-2">Sitting: {patientData.sitting}</td>
                 </tr>
                 <tr>
-                    <td className="text-left px-4 py-2">Standing: {patientData.standing}</td>
-                    <td className="text-left px-4 py-2">Walking: {patientData.walking}</td>
-                    <td className="text-left px-4 py-2">Babbling: {patientData.babbling}</td>
+                    <td className="text-left border px-4 py-2">Standing: {patientData.standing}</td>
+                    <td className="text-left border px-4 py-2">Walking: {patientData.walking}</td>
+                    <td className="text-left border px-4 py-2">Babbling: {patientData.babbling}</td>
                 </tr>
                 <tr>
-                    <td className="text-left px-4 py-2">One Word (meaningful): {patientData.one_word}</td>
-                    <td className="text-left px-4 py-2">Speech: {patientData.speech}</td>
-                    <td className="text-left px-4 py-2">Communication: {patientData.communication}</td>
+                    <td className="text-left border px-4 py-2">One Word (meaningful): {patientData.one_word}</td>
+                    <td className="text-left border px-4 py-2">Speech: {patientData.speech}</td>
+                    <td className="text-left border px-4 py-2">Communication: {patientData.communication}</td>
                 </tr>
                 <tr>
                     <th className="text-center underline py-5" colSpan={3}>
@@ -176,14 +177,14 @@ const ISAA = () => {
                     </th>
                 </tr>
                 <tr>
-                    <td className="text-left px-4 py-2">Seizures: {patientData.seizures}</td>
-                    <td className="text-left px-4 py-2">Feeding Difficulties: {patientData.feeding_diff}</td>
-                    <td className="text-left px-4 py-2">Abnormal Movements: {patientData.abnormal_movement}</td>
+                    <td className="text-left border px-4 py-2">Seizures: {patientData.seizures}</td>
+                    <td className="text-left border px-4 py-2">Feeding Difficulties: {patientData.feeding_diff}</td>
+                    <td className="text-left border px-4 py-2">Abnormal Movements: {patientData.abnormal_movement}</td>
                 </tr>
                 <tr>
-                    <td className="text-left px-4 py-2">Vision Difficulties: {patientData.vision_diff}</td>
-                    <td className="text-left px-4 py-2">Hearing Difficulties: {patientData.hearing_diff}</td>
-                    <td className="text-left px-4 py-2">Therapy Received: {patientData.therapy_received}</td>
+                    <td className="text-left border px-4 py-2">Vision Difficulties: {patientData.vision_diff}</td>
+                    <td className="text-left border px-4 py-2">Hearing Difficulties: {patientData.hearing_diff}</td>
+                    <td className="text-left border px-4 py-2">Therapy Received: {patientData.therapy_received}</td>
                 </tr>
                 <tr>
                     <th className="text-center underline py-5" colSpan={3}>
@@ -191,18 +192,18 @@ const ISAA = () => {
                     </th>
                 </tr>
                 <tr>
-                    <td className="text-left px-4 py-2">Place of Delivery: {patientData.pod}</td>
-                    <td className="text-left px-4 py-2">Gestational Age: {patientData.gest_age}</td>
-                    <td className="text-left px-4 py-2">Birth Order: {patientData.birth_order}</td>
+                    <td className="text-left border px-4 py-2">Place of Delivery: {patientData.pod}</td>
+                    <td className="text-left border px-4 py-2">Gestational Age: {patientData.gest_age}</td>
+                    <td className="text-left border px-4 py-2">Birth Order: {patientData.birth_order}</td>
                 </tr>
                 <tr>
-                    <td className="text-left px-4 py-2">Delivery Type: {patientData.delivery_type}</td>
-                    <td className="text-left px-4 py-2">Birth Cry: {patientData.birth_cry}</td>
-                    <td className="text-left px-4 py-2">NICU Stay: {patientData.nicu_final}</td>
+                    <td className="text-left border px-4 py-2">Delivery Type: {patientData.delivery_type}</td>
+                    <td className="text-left border px-4 py-2">Birth Cry: {patientData.birth_cry}</td>
+                    <td className="text-left border px-4 py-2">NICU Stay: {patientData.nicu_final}</td>
                 </tr>
                 <tr>
-                    <td className="text-left px-4 py-2">Birth Weight: {patientData.birth_weight}</td>
-                    <td className="text-left px-4 py-2">Congenital Malformations: {patientData.atypical_body}</td>
+                    <td className="text-left border px-4 py-2">Birth Weight: {patientData.birth_weight}</td>
+                    <td className="text-left border px-4 py-2">Congenital Malformations: {patientData.atypical_body}</td>
                 </tr>
                 <tr>
                     <th className="text-center underline py-5" colSpan={3}>
@@ -210,17 +211,17 @@ const ISAA = () => {
                     </th>
                 </tr>
                 <tr>
-                    <td className="text-left px-4 py-2">Hyperthyroidism: {patientData.hyperthyroidism}</td>
-                    <td className="text-left px-4 py-2">Poor Weight Gain: {patientData.weight_gain}</td>
-                    <td className="text-left px-4 py-2">Bleeding in Pregnancy: {patientData.bleeding}</td>
+                    <td className="text-left border px-4 py-2">Hyperthyroidism: {patientData.hyperthyroidism}</td>
+                    <td className="text-left border px-4 py-2">Poor Weight Gain: {patientData.weight_gain}</td>
+                    <td className="text-left border px-4 py-2">Bleeding in Pregnancy: {patientData.bleeding}</td>
                 </tr>
                 <tr>
-                    <td className="text-left px-4 py-2">Diabetes: {patientData.diabetes}</td>
-                    <td className="text-left px-4 py-2">Infection: {patientData.infection}</td>
-                    <td className="text-left px-4 py-2">Use of Harmful Medication: {patientData.hyperthyroidism}</td>
+                    <td className="text-left border px-4 py-2">Diabetes: {patientData.diabetes}</td>
+                    <td className="text-left border px-4 py-2">Infection: {patientData.infection}</td>
+                    <td className="text-left border px-4 py-2">Use of Harmful Medication: {patientData.hyperthyroidism}</td>
                 </tr>
                 <tr>
-                    <td className="text-left px-4 py-2">Trauma: {patientData.weight_gain}</td>
+                    <td className="text-left border px-4 py-2">Trauma: {patientData.weight_gain}</td>
                 </tr>
                 <tr>
                     <th className="text-center underline py-5" colSpan={3}>
@@ -228,9 +229,9 @@ const ISAA = () => {
                     </th>
                 </tr>
                 <tr>
-                    <td className="text-left px-4 py-2">Marriage in Family Relation: {patientData.marriage_in_family_relation}</td>
-                    <td className="text-left px-4 py-2">Family Type: {patientData.family_type}</td>
-                    <td className="text-left px-4 py-2">Medical History: {patientData.family_medical_history}</td>
+                    <td className="text-left border px-4 py-2">Marriage in Family Relation: {patientData.marriage_in_family_relation}</td>
+                    <td className="text-left border px-4 py-2">Family Type: {patientData.family_type}</td>
+                    <td className="text-left border px-4 py-2">Medical History: {patientData.family_medical_history}</td>
                 </tr>
             </tbody>
         </table>
