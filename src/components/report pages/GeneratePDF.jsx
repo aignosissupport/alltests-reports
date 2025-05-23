@@ -7,7 +7,7 @@ import { AppContext } from "../../AppContext";
 import ISAA from "./newISAA";
 import MCHAT from "./newMCHAT";
 import CARS from "./newCARS";
-import INCLEN from "./newINCLEN";
+import INCLEN from "./newINCLEN"; 
 import PatientHistory from "./PatientHistory";
 const pdfData = [
   {

@@ -1,0 +1,21 @@
+.calibration-next-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: transparent;
+    color: #9a0ea9;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 1px solid #9a0ea9;
+    width: 300px;
+    font-size: 20px;
+    font-weight: 200;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    
+  }
+  
+.calibration-next-btn:hover {
+    background-color: #9a0ea9;
+    color: white;
+  }
