@@ -224,7 +224,6 @@ const GeneratePDF = () => {
         const imgData = canvas.toDataURL('image/png', 1.0);
 
         if (i !== 0) pdf.addPage();
-        console.log(page);
         pdf.addImage(imgData, 'PNG', 0, 0, 210, 297); // A4 size in mm
       } catch (error) {
         console.error('Error capturing page:', error);
