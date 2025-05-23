@@ -1,10 +1,9 @@
 import React, { useContext, useEffect } from 'react';
 // import { useLocation } from 'react-router-dom';
-import { AppContext } from "../../AppContext";
+import { AppContext } from '../../AppContext';
 
 const ReportPage3 = () => {
-  const { testData,  } = useContext(AppContext);
-  
+  const { testData } = useContext(AppContext);
 
   // Function to parse query parameters
   // const getQueryParams = (search) => {
@@ -17,15 +16,15 @@ const ReportPage3 = () => {
   // };
 
   // useEffect(() => {
-    // const queryParams = getQueryParams(location.search);
-    // console.log("Extracted Parameters:", queryParams);
-    
-    // setTestData(queryParams); // Store the query parameters in testData
+  // const queryParams = getQueryParams(location.search);
+  // console.log("Extracted Parameters:", queryParams);
+
+  // setTestData(queryParams); // Store the query parameters in testData
   // }, [location.search, setTestData]);
 
   console.log(testData);
 
-  console.log("hiiii= ",testData.focal_IOU);
+  console.log('hiiii= ', testData.focal_IOU);
   return (
     <div className="report-page">
       <style>{`
@@ -234,31 +233,123 @@ const ReportPage3 = () => {
         </div>
       </div> */}
         <div className="section-right">
-        <span style={{ marginBottom: "-20px", fontWeight: "700", fontSize: "20px", fontFamily: "sans-serif" }}> Focal Point IOu </span>
-        <ProgressBar label="" value={testData.focal_IOU+"%"} />
-        <span style={{ marginBottom: "-20px", fontWeight: "700", fontSize: "20px", fontFamily: "sans-serif" }}> Joint Attention Error (%) </span>
-        <ProgressBar label="" value={testData.joint_attention_error+"%"} />
-        <span style={{ marginBottom: "-20px", fontWeight: "700", fontSize: "20px", fontFamily: "sans-serif" }}> Eye Contact Error </span>
-        <ProgressBar label="" value={testData.eye_contact_error+"%"} />
-        <span style={{ marginBottom: "-20px", fontWeight: "700", fontSize: "20px", fontFamily: "sans-serif" }}> Gaze Dispersion (pixels) </span>
-        <ProgressBar label="" value={testData.gaze_dispersion+"%"} />
-        <span style={{ marginBottom: "-20px", fontWeight: "700", fontSize: "20px", fontFamily: "sans-serif" }}> Gaze Speed (px/sec) </span>
-        <ProgressBar label="" value={testData.gaze_speed+"%"} />
-        <span style={{ marginBottom: "-20px", fontWeight: "700", fontSize: "20px", fontFamily: "sans-serif" }}> Screen Focus (%) </span>
-        <ProgressBar label="" value={testData.screen_focus+"%"} />
-        <span style={{ marginBottom: "-20px", fontWeight: "700", fontSize: "20px", fontFamily: "sans-serif" }}> Gaze Holds </span>
-      <ProgressBar label="" value={testData.gaze_holds+"%"} />
-      <span style={{ marginBottom: "-20px", fontWeight: "700", fontSize: "20px", fontFamily: "sans-serif" }}> Saccades (per second) </span>
-      <ProgressBar label="" value={testData.saccades+"%"} />
-      <span style={{ marginBottom: "-20px", fontWeight: "700", fontSize: "20px", fontFamily: "sans-serif" }}> Object Tracking Error (px) </span>
-      <ProgressBar label="" value={testData.object_tracking_error+"%"} />
+          <span
+            style={{
+              marginBottom: '-20px',
+              fontWeight: '700',
+              fontSize: '20px',
+              fontFamily: 'sans-serif',
+            }}
+          >
+            {' '}
+            Focal Point IOu{' '}
+          </span>
+          <ProgressBar label="" value={testData.focal_IOU + '%'} />
+          <span
+            style={{
+              marginBottom: '-20px',
+              fontWeight: '700',
+              fontSize: '20px',
+              fontFamily: 'sans-serif',
+            }}
+          >
+            {' '}
+            Joint Attention Error (%){' '}
+          </span>
+          <ProgressBar label="" value={testData.joint_attention_error + '%'} />
+          <span
+            style={{
+              marginBottom: '-20px',
+              fontWeight: '700',
+              fontSize: '20px',
+              fontFamily: 'sans-serif',
+            }}
+          >
+            {' '}
+            Eye Contact Error{' '}
+          </span>
+          <ProgressBar label="" value={testData.eye_contact_error + '%'} />
+          <span
+            style={{
+              marginBottom: '-20px',
+              fontWeight: '700',
+              fontSize: '20px',
+              fontFamily: 'sans-serif',
+            }}
+          >
+            {' '}
+            Gaze Dispersion (pixels){' '}
+          </span>
+          <ProgressBar label="" value={testData.gaze_dispersion + '%'} />
+          <span
+            style={{
+              marginBottom: '-20px',
+              fontWeight: '700',
+              fontSize: '20px',
+              fontFamily: 'sans-serif',
+            }}
+          >
+            {' '}
+            Gaze Speed (px/sec){' '}
+          </span>
+          <ProgressBar label="" value={testData.gaze_speed + '%'} />
+          <span
+            style={{
+              marginBottom: '-20px',
+              fontWeight: '700',
+              fontSize: '20px',
+              fontFamily: 'sans-serif',
+            }}
+          >
+            {' '}
+            Screen Focus (%){' '}
+          </span>
+          <ProgressBar label="" value={testData.screen_focus + '%'} />
+          <span
+            style={{
+              marginBottom: '-20px',
+              fontWeight: '700',
+              fontSize: '20px',
+              fontFamily: 'sans-serif',
+            }}
+          >
+            {' '}
+            Gaze Holds{' '}
+          </span>
+          <ProgressBar label="" value={testData.gaze_holds + '%'} />
+          <span
+            style={{
+              marginBottom: '-20px',
+              fontWeight: '700',
+              fontSize: '20px',
+              fontFamily: 'sans-serif',
+            }}
+          >
+            {' '}
+            Saccades (per second){' '}
+          </span>
+          <ProgressBar label="" value={testData.saccades + '%'} />
+          <span
+            style={{
+              marginBottom: '-20px',
+              fontWeight: '700',
+              fontSize: '20px',
+              fontFamily: 'sans-serif',
+            }}
+          >
+            {' '}
+            Object Tracking Error (px){' '}
+          </span>
+          <ProgressBar label="" value={testData.object_tracking_error + '%'} />
         </div>
       </div>
 
       <div className="section">
         <div className="section-left">
           <div className="icon communication-icon" />
-          <div className="small-title-box small-title-box-communication">Social Interaction & Communication</div>
+          <div className="small-title-box small-title-box-communication">
+            Social Interaction & Communication
+          </div>
         </div>
 
         {/* <div className="section-right">
@@ -277,31 +368,116 @@ const ReportPage3 = () => {
         </div>
       </div> */}
 
-      <div className="section-right">
-      
-      <span style={{ marginBottom: "-20px", fontWeight: "700", fontSize: "20px", fontFamily: "sans-serif" }}> Social Preference (%) </span>
-      <ProgressBar label="" value={testData.social_preference+"%"} customClass="fill-communication"/>
-      
-      <span style={{ marginBottom: "-20px", fontWeight: "700", fontSize: "20px", fontFamily: "sans-serif" }}> LipSync Recognisability (%) </span>
-      <ProgressBar label="" value={testData.lipsync_recog+"%"} customClass="fill-communication"/>
-      <span style={{ marginBottom: "-20px", fontWeight: "700", fontSize: "20px", fontFamily: "sans-serif" }}> Convo Recognisability (%) </span>
-      <ProgressBar label="" value={testData.convo_recog+"%"} customClass="fill-communication"/>
+        <div className="section-right">
+          <span
+            style={{
+              marginBottom: '-20px',
+              fontWeight: '700',
+              fontSize: '20px',
+              fontFamily: 'sans-serif',
+            }}
+          >
+            {' '}
+            Social Preference (%){' '}
+          </span>
+          <ProgressBar
+            label=""
+            value={testData.social_preference + '%'}
+            customClass="fill-communication"
+          />
+
+          <span
+            style={{
+              marginBottom: '-20px',
+              fontWeight: '700',
+              fontSize: '20px',
+              fontFamily: 'sans-serif',
+            }}
+          >
+            {' '}
+            LipSync Recognisability (%){' '}
+          </span>
+          <ProgressBar
+            label=""
+            value={testData.lipsync_recog + '%'}
+            customClass="fill-communication"
+          />
+          <span
+            style={{
+              marginBottom: '-20px',
+              fontWeight: '700',
+              fontSize: '20px',
+              fontFamily: 'sans-serif',
+            }}
+          >
+            {' '}
+            Convo Recognisability (%){' '}
+          </span>
+          <ProgressBar
+            label=""
+            value={testData.convo_recog + '%'}
+            customClass="fill-communication"
+          />
         </div>
       </div>
 
       <div className="section">
         <div className="section-left">
           <div className="icon sensory-icon" />
-          <div className="small-title-box small-title-box-sensory">Sensory and Motor Skills</div>
+          <div className="small-title-box small-title-box-sensory">
+            Sensory and Motor Skills
+          </div>
         </div>
 
         <div className="section-right">
-        <span style={{ marginBottom: "-20px", fontWeight: "700", fontSize: "20px", fontFamily: "sans-serif" }}> meanYaw (deg/sec) </span>
-        <ProgressBar label="" value={testData.yaw+"%"} customClass="fill-communication"/>
-      <span style={{ marginBottom: "-20px", fontWeight: "700", fontSize: "20px", fontFamily: "sans-serif" }}> meanPitch (deg/sec) </span>
-      <ProgressBar label="" value={testData.pitch+"%"} customClass="fill-communication"/>
-      <span style={{ marginBottom: "-20px", fontWeight: "700", fontSize: "20px", fontFamily: "sans-serif" }}> meanRoll (deg/sec) </span>
-      <ProgressBar label="" value={testData.roll+"%"} customClass="fill-communication"/>
+          <span
+            style={{
+              marginBottom: '-20px',
+              fontWeight: '700',
+              fontSize: '20px',
+              fontFamily: 'sans-serif',
+            }}
+          >
+            {' '}
+            meanYaw (deg/sec){' '}
+          </span>
+          <ProgressBar
+            label=""
+            value={testData.yaw + '%'}
+            customClass="fill-communication"
+          />
+          <span
+            style={{
+              marginBottom: '-20px',
+              fontWeight: '700',
+              fontSize: '20px',
+              fontFamily: 'sans-serif',
+            }}
+          >
+            {' '}
+            meanPitch (deg/sec){' '}
+          </span>
+          <ProgressBar
+            label=""
+            value={testData.pitch + '%'}
+            customClass="fill-communication"
+          />
+          <span
+            style={{
+              marginBottom: '-20px',
+              fontWeight: '700',
+              fontSize: '20px',
+              fontFamily: 'sans-serif',
+            }}
+          >
+            {' '}
+            meanRoll (deg/sec){' '}
+          </span>
+          <ProgressBar
+            label=""
+            value={testData.roll + '%'}
+            customClass="fill-communication"
+          />
         </div>
       </div>
 
@@ -327,7 +503,7 @@ const ProgressBar = ({ label, value, customClass }) => {
   return (
     <div className="progress-bar">
       <div className="bar">
-        <div className={customClass || "fill"} style={{ width: value }}>
+        <div className={customClass || 'fill'} style={{ width: value }}>
           <div className="percentage-circle">{value}</div>
           <div className="label">{label}</div>
         </div>

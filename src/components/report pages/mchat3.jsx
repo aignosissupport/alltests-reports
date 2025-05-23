@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
 const MCHAT3 = () => {
   const getURLParameter = (name) => {
     const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get(name) || "N/A";
+    return urlParams.get(name) || 'N/A';
   };
   const currentDate = new Date().toLocaleDateString();
   const mchatQuestions = [
@@ -23,63 +23,68 @@ const MCHAT3 = () => {
     // "Does your child look you in the eye when you are talking to him or her?",
     // "Does your child try to copy what you do?",
     // "If you turn your head to look at something, does your child look around to see what you are looking at?",
-    "Does your child try to get you to watch him or her?",
-    "Does your child understand when you tell him or her to do something?",
-    "If something new happens, does your child look at your face to see how you feel about it?",
-    "Does your child like movement activities?",
+    'Does your child try to get you to watch him or her?',
+    'Does your child understand when you tell him or her to do something?',
+    'If something new happens, does your child look at your face to see how you feel about it?',
+    'Does your child like movement activities?',
   ];
 
   return (
-    <div className="pdf-image flex flex-col font-manrope items-center p-8 bg-white min-h-screen" >
- <div className="pdf-page bg-white p-8 shadow-md rounded-md w-[210mm] h-[297mm]">
-             <div>
-                    <h1 className='text-left text-sm'>Modified Checklist for Autism in Toddlers Report</h1>
-                    <div className="w-full border-t-2 mt-2 border-[#9C00AD]"></div>
-                </div>
-    <div className="p-6 bg-white min-h-screen">
-      <h1 className="text-2xl font-semibold text-[#94059f] text-center mb-4">
-        M-CHAT Screening
-      </h1>
+    <div className="pdf-image flex flex-col font-manrope items-center p-8 bg-white min-h-screen">
+      <div className="pdf-page bg-white p-8 shadow-md rounded-md w-[210mm] h-[297mm]">
+        <div>
+          <h1 className="text-left text-sm">
+            Modified Checklist for Autism in Toddlers Report
+          </h1>
+          <div className="w-full border-t-2 mt-2 border-[#9C00AD]"></div>
+        </div>
+        <div className="p-6 bg-white min-h-screen">
+          <h1 className="text-2xl font-semibold text-[#94059f] text-center mb-4">
+            M-CHAT Screening
+          </h1>
 
-      <div className="overflow-x-auto">
-        <table className="w-full border-collapse border border-gray-300">
-          <thead>
-            <tr className="bg-[#94059f] text-white">
-              <th className="p-3 border border-gray-300">Question</th>
-              <th className="p-3 border border-gray-300">Response</th>
-            </tr>
-          </thead>
-          <tbody>
-            {mchatQuestions.map((question, index) => {
-              const response = getURLParameter(
-                `MCHAT_${(index + 1).toString().padStart(2, "0")}`
-              );
-              return (
-                <tr key={index} className="border border-gray-300">
-                  <td className="p-3 border border-gray-300">{question}</td>
-                  <td className="p-3 border border-gray-300 text-[#94059f]">
-                    {response}
-                  </td>
+          <div className="overflow-x-auto">
+            <table className="w-full border-collapse border border-gray-300">
+              <thead>
+                <tr className="bg-[#94059f] text-white">
+                  <th className="p-3 border border-gray-300">Question</th>
+                  <th className="p-3 border border-gray-300">Response</th>
                 </tr>
-              );
-            })}
-          </tbody>
-        </table>
+              </thead>
+              <tbody>
+                {mchatQuestions.map((question, index) => {
+                  const response = getURLParameter(
+                    `MCHAT_${(index + 1).toString().padStart(2, '0')}`
+                  );
+                  return (
+                    <tr key={index} className="border border-gray-300">
+                      <td className="p-3 border border-gray-300">{question}</td>
+                      <td className="p-3 border border-gray-300 text-[#94059f]">
+                        {response}
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <div className="w-full flex justify-between items-center text-xs font-manrope mt-20 border-t-2 border-[#800080] pt-2">
+          <span className="text-[10px]">MCHAT Report - {name}</span>
+          <div className="text-center text-[10px]">
+            <span></span>
+            <br />
+            <span>ID: Report Generation Date: {currentDate}</span>
+          </div>
+          <span className="text-[10px]">Page 14</span>
+        </div>
       </div>
     </div>
-    <br /><br /><br /><br /><br />
-    <div className="w-full flex justify-between items-center text-xs font-manrope mt-20 border-t-2 border-[#800080] pt-2">
-                    <span className='text-[10px]'>MCHAT Report - {name}</span>
-                    <div className="text-center text-[10px]">
-                        <span></span>
-                        <br />
-                        <span>ID: Report Generation Date: {currentDate}</span>
-                    </div>
-                    <span className='text-[10px]'>Page 14</span>
-        </div>
-    </div>
-    </div>
-
   );
 };
 

@@ -6,17 +6,20 @@ const DataCollectionPage = () => {
   // const location = useLocation();
   const navigate = useNavigate();
 
-  const {testData, setTestData} = useContext(AppContext);
+  const { testData, setTestData } = useContext(AppContext);
 
   useEffect(() => {
-    if (!testData.dataCollectionMode || testData.dataCollectionMode.length === 0) {
+    if (
+      !testData.dataCollectionMode ||
+      testData.dataCollectionMode.length === 0
+    ) {
       navigate('/patienthistory'); // Redirect to /patienthistory if no testData.dataCollectionMode present
     } else if (testData.dataCollectionMode.includes('INCLEN')) {
-        navigate('/INCLEN');
+      navigate('/INCLEN');
     } else if (testData.dataCollectionMode.includes('ISAA')) {
-        navigate('/ISAA');
+      navigate('/ISAA');
     } else if (testData.dataCollectionMode.includes('CARS')) {
-        navigate('/CARS');
+      navigate('/CARS');
     } else {
       navigate('/patienthistory'); // Default to patienthistory if none of the options are present
     }

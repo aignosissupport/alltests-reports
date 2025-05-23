@@ -9,8 +9,14 @@ const ISAA4 = () => {
     // ["Shows inappropriate emotional response", "Shows exaggerated emotions", "Engages in self-stimulating emotions", "Lacks fear of danger", "Excited or agitated for no apparent reason"],
     // ["Acquired speech and lost it", "Has difficulty in using non-verbal language or gestures to communicate", "Engages in stereotyped and repetitive use of language", "Engages in echolalic speech", "Produces infantile squeals/unusual noises", "Unable to initiate or sustain conversation with others", "Uses jargon or meaningless words", "Uses pronoun reversals", "Unable to grasp pragmatics of communication (real meaning)"],
     // ["Engages in stereotyped and repetitive motor mannerisms", "Shows attachment to inanimate objects", "Shows hyperactivity/restlessness", "Exhibits aggressive behavior", "Throws temper tantrums", "Engages in self-injurious behavior", "Insists on sameness"],
-    ["Unusually sensitive to sensory stimuli", "Stares into space for long periods of time", "Has difficulty in tracking objects", "Has unusual vision", "Insensitive to pain", "Responds to objects/people unusually by smelling, touching or tasting"],
-    
+    [
+      'Unusually sensitive to sensory stimuli',
+      'Stares into space for long periods of time',
+      'Has difficulty in tracking objects',
+      'Has unusual vision',
+      'Insensitive to pain',
+      'Responds to objects/people unusually by smelling, touching or tasting',
+    ],
   ];
 
   const domainNames = [
@@ -19,8 +25,7 @@ const ISAA4 = () => {
     // "Emotional Responsiveness",
     // "Speech, Language, and Communication",
     // "Behavioral Patterns",
-    "Sensory Aspects",
-    
+    'Sensory Aspects',
   ];
 
   const getURLParameter = (name) => {
@@ -30,90 +35,94 @@ const ISAA4 = () => {
 
   const formatToOneDecimal = (value) => parseFloat(value).toFixed(1);
   const patientData = {
-    patientId: getURLParameter("patient_id"),
-    socialResponsiveness: parseFloat(getURLParameter("social_response")) || 0,
-    emotionalResponsiveness: parseFloat(getURLParameter("emotional_response")) || 0,
-    speechRecognition: parseFloat(getURLParameter("speech_recognition")) || 0,
-    behaviouralPattern: parseFloat(getURLParameter("behaviour_pattern")) || 0,
-    sensoryAspects: parseFloat(getURLParameter("sensory_aspect")) || 0,
-    cognitiveComponent: parseFloat(getURLParameter("cognitive")) || 0,
-    TOT_ISAA: parseFloat(getURLParameter("TOT_ISAA")) || 0,
-    isaaInterpretation: getURLParameter("isaaInterpretation") || "N/A",
-    name:getURLParameter("Name") || "N/A",
+    patientId: getURLParameter('patient_id'),
+    socialResponsiveness: parseFloat(getURLParameter('social_response')) || 0,
+    emotionalResponsiveness:
+      parseFloat(getURLParameter('emotional_response')) || 0,
+    speechRecognition: parseFloat(getURLParameter('speech_recognition')) || 0,
+    behaviouralPattern: parseFloat(getURLParameter('behaviour_pattern')) || 0,
+    sensoryAspects: parseFloat(getURLParameter('sensory_aspect')) || 0,
+    cognitiveComponent: parseFloat(getURLParameter('cognitive')) || 0,
+    TOT_ISAA: parseFloat(getURLParameter('TOT_ISAA')) || 0,
+    isaaInterpretation: getURLParameter('isaaInterpretation') || 'N/A',
+    name: getURLParameter('Name') || 'N/A',
   };
   const currentDate = new Date().toLocaleDateString();
   const displayData = () => {
-    
-
-    document.getElementById('isaapatientNamecell').innerText = getURLParameter("Name") || "N/A";
-    document.getElementById('chronologicalAgecell').innerText = (getURLParameter("Age") || "N/A") + " Years";
-    document.getElementById('isaascore').innerText = formatToOneDecimal(patientData.TOT_ISAA);
-    document.getElementById('isaaInterpretationmessage').innerText = patientData.isaaInterpretation;
+    document.getElementById('isaapatientNamecell').innerText =
+      getURLParameter('Name') || 'N/A';
+    document.getElementById('chronologicalAgecell').innerText =
+      (getURLParameter('Age') || 'N/A') + ' Years';
+    document.getElementById('isaascore').innerText = formatToOneDecimal(
+      patientData.TOT_ISAA
+    );
+    document.getElementById('isaaInterpretationmessage').innerText =
+      patientData.isaaInterpretation;
 
     // createBarChart(patientData);
   };
 
-//   let chartInstance = null; // Store the chart instance globally
+  //   let chartInstance = null; // Store the chart instance globally
 
-// const createBarChart = (data) => {
-//   const ctx = document.getElementById('barChart').getContext('2d');
+  // const createBarChart = (data) => {
+  //   const ctx = document.getElementById('barChart').getContext('2d');
 
-//   // Destroy existing chart if it exists
-//   if (chartInstance) {
-//     chartInstance.destroy();
-//   }
+  //   // Destroy existing chart if it exists
+  //   if (chartInstance) {
+  //     chartInstance.destroy();
+  //   }
 
-//   // Create new chart instance
-//   chartInstance = new Chart(ctx, {
-//     type: 'bar',
-//     data: {
-//       labels: [
-//         "Social Responsiveness",
-//         "Emotional Responsiveness",
-//         "Speech Recognition",
-//         "Behavioural Pattern",
-//         "Sensory Aspects",
-//         "Cognitive Component"
-//       ],
-//       datasets: [{
-//         label: 'Percentage',
-//         data: [
-//           data.socialResponsiveness,
-//           data.emotionalResponsiveness,
-//           data.speechRecognition,
-//           data.behaviouralPattern,
-//           data.sensoryAspects,
-//           data.cognitiveComponent
-//         ],
-//         backgroundColor: ['#93ef93', '#8bd0fa', '#b20fa9', '#bc81f6', '#f7a000', '#cbcbcb'],
-//         borderColor: ['#4bc0c0', '#36a2eb', '#ffce56', '#9966ff', '#ff9f40', '#c9cbcf'],
-//         borderWidth: 1
-//       }]
-//     },
-//     options: {
-//       indexAxis: 'y',
-//       scales: {
-//         x: {
-//           beginAtZero: true,
-//           max: 100
-//         }
-//       },
-//       plugins: {
-//         datalabels: {
-//           color: 'white',
-//           anchor: 'center',
-//           align: 'center',
-//           font: {
-//             weight: 'bold',
-//             size: 14
-//           },
-//           formatter: (value) => value.toFixed(2)
-//         }
-//       }
-//     },
-//     plugins: [ChartDataLabels]
-//   });
-// };
+  //   // Create new chart instance
+  //   chartInstance = new Chart(ctx, {
+  //     type: 'bar',
+  //     data: {
+  //       labels: [
+  //         "Social Responsiveness",
+  //         "Emotional Responsiveness",
+  //         "Speech Recognition",
+  //         "Behavioural Pattern",
+  //         "Sensory Aspects",
+  //         "Cognitive Component"
+  //       ],
+  //       datasets: [{
+  //         label: 'Percentage',
+  //         data: [
+  //           data.socialResponsiveness,
+  //           data.emotionalResponsiveness,
+  //           data.speechRecognition,
+  //           data.behaviouralPattern,
+  //           data.sensoryAspects,
+  //           data.cognitiveComponent
+  //         ],
+  //         backgroundColor: ['#93ef93', '#8bd0fa', '#b20fa9', '#bc81f6', '#f7a000', '#cbcbcb'],
+  //         borderColor: ['#4bc0c0', '#36a2eb', '#ffce56', '#9966ff', '#ff9f40', '#c9cbcf'],
+  //         borderWidth: 1
+  //       }]
+  //     },
+  //     options: {
+  //       indexAxis: 'y',
+  //       scales: {
+  //         x: {
+  //           beginAtZero: true,
+  //           max: 100
+  //         }
+  //       },
+  //       plugins: {
+  //         datalabels: {
+  //           color: 'white',
+  //           anchor: 'center',
+  //           align: 'center',
+  //           font: {
+  //             weight: 'bold',
+  //             size: 14
+  //           },
+  //           formatter: (value) => value.toFixed(2)
+  //         }
+  //       }
+  //     },
+  //     plugins: [ChartDataLabels]
+  //   });
+  // };
 
   useEffect(() => {
     displayData();
@@ -145,17 +154,20 @@ const ISAA4 = () => {
           margin-bottom: 10px;
         }
       `}</style>
- <div className="pdf-image flex flex-col font-manrope items-center p-8 bg-white min-h-screen" >
- <div className="pdf-page bg-white p-8 shadow-md rounded-md w-[210mm] h-[297mm]">
-             <div>
-                    <h1 className='text-left text-sm'>Indian Scale for Assessment of Autism Report</h1>
-                    <div className="w-full border-t-2 mt-2 border-[#9C00AD]"></div>
-                </div>
+      <div className="pdf-image flex flex-col font-manrope items-center p-8 bg-white min-h-screen">
+        <div className="pdf-page bg-white p-8 shadow-md rounded-md w-[210mm] h-[297mm]">
+          <div>
+            <h1 className="text-left text-sm">
+              Indian Scale for Assessment of Autism Report
+            </h1>
+            <div className="w-full border-t-2 mt-2 border-[#9C00AD]"></div>
+          </div>
 
-      <div className="container" style={{width: "100%",
-          maxWidth: "800px",
-          margin: "auto"}}>
-        {/* <h1 style={{paddingBottom: "15px",
+          <div
+            className="container"
+            style={{ width: '100%', maxWidth: '800px', margin: 'auto' }}
+          >
+            {/* <h1 style={{paddingBottom: "15px",
             marginLeft:"-23vw",
             fontFamily: '"Times New Roman", Times, serif',
             fontWeight: "600",
@@ -189,73 +201,209 @@ const ISAA4 = () => {
 
         <br /><br /><br /><br />
          */}
-         <br /><br />
-        {domainNames.map((domain, index) => (
-          <div key={index}>
-            <h2 className="section-title">{domain}</h2>
+            <br />
+            <br />
+            {domainNames.map((domain, index) => (
+              <div key={index}>
+                <h2 className="section-title">{domain}</h2>
+                <center>
+                  <table border="1" width="80%">
+                    <thead>
+                      <tr>
+                        <th
+                          style={{
+                            border: '1px solid #d1d5db',
+                            borderLeft: '0px',
+                            padding: '8px',
+                          }}
+                        >
+                          Question
+                        </th>
+                        <th
+                          style={{
+                            border: '1px solid #d1d5db',
+                            borderLeft: '0px',
+                            borderRight: '0px',
+                            padding: '8px',
+                          }}
+                        >
+                          Response
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {ISAAQuestions[index].map((question, qIndex) => (
+                        <tr key={qIndex}>
+                          <td
+                            style={{
+                              border: '1px solid #d1d5db',
+                              borderLeft: '0px',
+                              padding: '8px',
+                            }}
+                          >
+                            {question}
+                          </td>
+                          <td
+                            style={{
+                              border: '1px solid #d1d5db',
+                              borderLeft: '0px',
+                              borderRight: '0px',
+                              padding: '8px',
+                            }}
+                          >
+                            {getURLParameter(
+                              `ISAA_${index + 1}.${qIndex + 1}`
+                            ) || 'N/A'}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                  <br />
+                  <br />
+                </center>
+              </div>
+            ))}
             <center>
-            <table border="1" width="80%">
-              <thead>
+              <table
+                border="4"
+                style={{
+                  width: '50%',
+                  textAlign: 'center',
+                  marginTop: '10px',
+                  border: '1px solid #d1d5db',
+                  padding: '8px',
+                }}
+              >
                 <tr>
-                  <th style={{ border: "1px solid #d1d5db", borderLeft:"0px" , padding: "8px" }}>Question</th>
-                  <th style={{ border: "1px solid #d1d5db", borderLeft:"0px" , borderRight:"0px" , padding: "8px" }}>Response</th>
+                  <th
+                    style={{
+                      border: '1px solid #d1d5db',
+                      borderLeft: '0px',
+                      borderRight: '0px',
+                      padding: '8px',
+                    }}
+                  >
+                    Score Range
+                  </th>
+                  <th
+                    style={{
+                      border: '1px solid #d1d5db',
+                      borderRight: '0px',
+                      padding: '8px',
+                    }}
+                  >
+                    Classification
+                  </th>
                 </tr>
-              </thead>
-              <tbody> 
-                {ISAAQuestions[index].map((question, qIndex) => (
-                  <tr key={qIndex}>
-                    <td style={{ border: "1px solid #d1d5db", borderLeft:"0px" ,  padding: "8px" }}>{question}</td>
-                    <td style={{ border: "1px solid #d1d5db", borderLeft:"0px" , borderRight:"0px" , padding: "8px" }}>{getURLParameter(`ISAA_${index + 1}.${qIndex + 1}`) || "N/A"}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-            <br /><br />
+                <tr>
+                  <td
+                    style={{
+                      border: '1px solid #d1d5db',
+                      borderLeft: '0px',
+                      padding: '8px',
+                    }}
+                  >
+                    &lt; 70
+                  </td>
+                  <td
+                    style={{
+                      border: '1px solid #d1d5db',
+                      borderRight: '0px',
+                      padding: '8px',
+                    }}
+                  >
+                    Normal
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    style={{
+                      border: '1px solid #d1d5db',
+                      borderLeft: '0px',
+                      padding: '8px',
+                    }}
+                  >
+                    70 - 105
+                  </td>
+                  <td
+                    style={{
+                      border: '1px solid #d1d5db',
+                      borderRight: '0px',
+                      padding: '8px',
+                    }}
+                  >
+                    Mild Autism
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    style={{
+                      border: '1px solid #d1d5db',
+                      borderLeft: '0px',
+                      padding: '8px',
+                    }}
+                  >
+                    106 - 153
+                  </td>
+                  <td
+                    style={{
+                      border: '1px solid #d1d5db',
+                      borderRight: '0px',
+                      padding: '8px',
+                    }}
+                  >
+                    Moderate Autism
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    style={{
+                      border: '1px solid #d1d5db',
+                      borderLeft: '0px',
+                      padding: '8px',
+                    }}
+                  >
+                    &gt; 153
+                  </td>
+                  <td
+                    style={{
+                      border: '1px solid #d1d5db',
+                      borderRight: '0px',
+                      padding: '8px',
+                    }}
+                  >
+                    Severe Autism
+                  </td>
+                </tr>
+              </table>
             </center>
-            
-          </div>
-        )
-        )}
-        <center>
-        <table border="4" style={{width: "50%", textAlign: "center", marginTop: "10px", border: "1px solid #d1d5db" , padding: "8px" }}>
-                    <tr >
-                        <th style={{ border: "1px solid #d1d5db", borderLeft:"0px", borderRight:"0px" ,  padding: "8px" }}>Score Range</th>
-                        <th style={{ border: "1px solid #d1d5db", borderRight:"0px" ,  padding: "8px" }}>Classification</th>
-                    </tr>
-                    <tr>
-                        <td style={{ border: "1px solid #d1d5db", borderLeft:"0px",  padding: "8px" }}>&lt; 70</td>
-                        <td style={{ border: "1px solid #d1d5db", borderRight:"0px" ,  padding: "8px" }}>Normal</td>
-                    </tr>
-                    <tr>
-                        <td style={{ border: "1px solid #d1d5db", borderLeft:"0px",   padding: "8px" }}>70 - 105</td>
-                        <td style={{ border: "1px solid #d1d5db",borderRight:"0px" ,  padding: "8px" }}>Mild Autism</td>
-                    </tr>
-                    <tr>
-                        <td style={{ border: "1px solid #d1d5db", borderLeft:"0px",   padding: "8px" }}>106 - 153</td>
-                        <td style={{ border: "1px solid #d1d5db", borderRight:"0px" ,  padding: "8px" }}>Moderate Autism</td>
-                    </tr>
-                    <tr>
-                        <td style={{ border: "1px solid #d1d5db", borderLeft:"0px",  padding: "8px" }}>&gt; 153</td>
-                        <td style={{ border: "1px solid #d1d5db", borderRight:"0px" ,  padding: "8px" }}>Severe Autism</td>
-                    </tr>
-                </table> 
-        </center> 
-        <br /><br />
-        <h2 style={{textAlign:"left"}}>ISAA Score: <span id="isaascore">{patientData.TOT_ISAA} </span></h2>
-        <p style={{textAlign:"left"}}>Interpretation: <span id="isaaInterpretationmessage">{patientData.isaaInterpretation}</span></p>
+            <br />
+            <br />
+            <h2 style={{ textAlign: 'left' }}>
+              ISAA Score: <span id="isaascore">{patientData.TOT_ISAA} </span>
+            </h2>
+            <p style={{ textAlign: 'left' }}>
+              Interpretation:{' '}
+              <span id="isaaInterpretationmessage">
+                {patientData.isaaInterpretation}
+              </span>
+            </p>
 
-        {/* <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> */}
-         <div className="w-full flex justify-between items-center text-xs font-manrope mt-60 border-t-2 border-[#800080] pt-2">
-                    <span className='text-[10px]'>ISAA Report - {patientData.name}</span>
-                    <div className="text-center text-[10px]">
-                        <span></span>
-                        <br />
-                        <span>ID: Report Generation Date: {currentDate}</span>
-                    </div>
-                    <span className='text-[10px]'>Page 11</span>
+            {/* <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> */}
+            <div className="w-full flex justify-between items-center text-xs font-manrope mt-60 border-t-2 border-[#800080] pt-2">
+              <span className="text-[10px]">
+                ISAA Report - {patientData.name}
+              </span>
+              <div className="text-center text-[10px]">
+                <span></span>
+                <br />
+                <span>ID: Report Generation Date: {currentDate}</span>
+              </div>
+              <span className="text-[10px]">Page 11</span>
+            </div>
+          </div>
         </div>
-      </div>
-      </div>
       </div>
     </>
   );

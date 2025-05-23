@@ -1,22 +1,22 @@
 // DogCalibration.jsx
 
-import React, { useRef, useState, useEffect } from "react";
-import axios from "axios";
-import { useNavigate } from "react-router-dom"; // Import useNavigate for navigation
-import Circle from "./Circle"; // Import Circle component
+import React, { useRef, useState, useEffect } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
+import Circle from './Circle'; // Import Circle component
 // import "bootstrap/dist/css/bootstrap.min.css";
-import BeatLoader from "react-spinners/BeatLoader"; // Ensure you import the BeatLoader component
-import dogpng from "../../assets/aignoisiai/dog_face.png";
+import BeatLoader from 'react-spinners/BeatLoader'; // Ensure you import the BeatLoader component
+import dogpng from '../../assets/aignoisiai/dog_face.png';
 import {
   encryptCalibrationData,
   encryptPassword,
-} from "../config/EncryptionUtils";
-import { v4 as uuidv4 } from "uuid";
-import { useContext } from "react";
-import { AppContext } from "../aignosisintegration/AppContext.jsx";
+} from '../config/EncryptionUtils';
+import { v4 as uuidv4 } from 'uuid';
+import { useContext } from 'react';
+import { AppContext } from '../aignosisintegration/AppContext.jsx';
 
 const DogCalibration = () => {
-  const SERVER_MIDDLEWARE_URL = "https://35.207.211.80/rest/calibration/data/";
+  const SERVER_MIDDLEWARE_URL = 'https://35.207.211.80/rest/calibration/data/';
   // const SERVER_MIDDLEWARE_URL = 'http://127.0.0.1:8000/rest/calibration/data/';
 
   // const [TRANSACTION_ID, ] = useState(uuidv4());
@@ -57,14 +57,13 @@ const DogCalibration = () => {
   useEffect(() => {
     // const audio = new Audio("/dog_bark.wav");
     // Initialize and play the audio in a loop
-    
 
     const handleFirstInteraction = () => {
       const docElm = document.documentElement;
-      
+
       const requestFullScreen = () => {
         if (docElm.requestFullscreen) {
-          docElm.requestFullscreen().catch(err => {
+          docElm.requestFullscreen().catch((err) => {
             console.warn('Fullscreen request failed:', err);
           });
         } else if (docElm.mozRequestFullScreen) {
@@ -75,29 +74,27 @@ const DogCalibration = () => {
           docElm.msRequestFullscreen();
         }
       };
-      
+
       requestFullScreen();
-      audio.addEventListener("canplaythrough", handleAudioPlay);
+      audio.addEventListener('canplaythrough', handleAudioPlay);
 
       // Remove the event listener after first interaction
       document.removeEventListener('click', handleFirstInteraction);
       document.removeEventListener('touchstart', handleFirstInteraction);
     };
     document.addEventListener('click', handleFirstInteraction);
-  document.addEventListener('touchstart', handleFirstInteraction);
+    document.addEventListener('touchstart', handleFirstInteraction);
 
-  const handleAudioPlay = () => {
-    console.log("Audio playing");
-    audio.loop = true; // Enable looping
-    audio.play().catch((error) => console.error("Audio play error:", error));
-  };
+    const handleAudioPlay = () => {
+      console.log('Audio playing');
+      audio.loop = true; // Enable looping
+      audio.play().catch((error) => console.error('Audio play error:', error));
+    };
 
-  // handleAudioPlay();
-  // Wait for the audio to be fully loaded
-  // audio.addEventListener("canplaythrough", handleAudioPlay);
+    // handleAudioPlay();
+    // Wait for the audio to be fully loaded
+    // audio.addEventListener("canplaythrough", handleAudioPlay);
 
-
-    
     // save patient uid and tid in context
     setTestData({
       ...testData,
@@ -105,7 +102,7 @@ const DogCalibration = () => {
       TRANSACTION_ID: uuidv4(),
     });
 
-    console.log("DOG CALIBRATION TEST DATA", testData);
+    console.log('DOG CALIBRATION TEST DATA', testData);
     // Get the webcam stream and metadata on mount
     if (parentRef.current) {
       const { clientWidth, clientHeight } = parentRef.current;
@@ -114,7 +111,7 @@ const DogCalibration = () => {
 
     const startWebcam = async () => {
       if (!navigator.mediaDevices.getUserMedia) {
-        console.error("getUserMedia not supported");
+        console.error('getUserMedia not supported');
         return;
       }
 
@@ -132,7 +129,7 @@ const DogCalibration = () => {
 
         videoRef.current.onloadedmetadata = handleMetadata;
       } catch (error) {
-        console.error("Webcam start error:", error);
+        console.error('Webcam start error:', error);
       }
     };
 
@@ -140,7 +137,6 @@ const DogCalibration = () => {
     return () => {
       audio.pause();
       // audio.currentTime = 0; // Reset audio
-
 
       document.removeEventListener('click', handleFirstInteraction);
       document.removeEventListener('touchstart', handleFirstInteraction);
@@ -159,31 +155,26 @@ const DogCalibration = () => {
           console.warn('Could not exit fullscreen', err);
         }
       }
-
-
-
-
     };
   }, []);
   const handleNextButtonClick = () => {
-    
-    navigate("/video"); // Navigate to the video page
+    navigate('/video'); // Navigate to the video page
   };
 
   const captureFrame = () => {
     if (canvasRef.current && videoRef.current) {
       const canvas = canvasRef.current;
-      const context = canvas.getContext("2d");
+      const context = canvas.getContext('2d');
 
       canvas.width = videoRef.current.videoWidth;
       canvas.height = videoRef.current.videoHeight;
 
       context.drawImage(videoRef.current, 0, 0, canvas.width, canvas.height);
 
-      const frameData = canvas.toDataURL("image/jpeg");
+      const frameData = canvas.toDataURL('image/jpeg');
       return frameData;
     } else {
-      console.warn("Frame capture failed: canvasRef or videoRef is null");
+      console.warn('Frame capture failed: canvasRef or videoRef is null');
       // TODO: send back to take assignment page, with alert saying some error occurred
     }
   };
@@ -217,16 +208,14 @@ const DogCalibration = () => {
       setCurrentCircleIndex(currentCircleIndex + 1);
     } else {
       // THIS IS THE LAST CLICK ON THE DOG / CAT
-      try{
-        console.log('stopping audio')
+      try {
+        console.log('stopping audio');
         audio.loop = false;
         audio.pause();
         audio.currentTime = 0; // Reset audio
+      } catch (err) {
+        console.log('error stopping audio', err);
       }
-      catch(err){
-        console.log('error stopping audio', err)
-      }
-      
 
       setClickTimes((clicktimes) => [
         ...clicktimes,
@@ -291,19 +280,19 @@ const DogCalibration = () => {
 
         try {
           const aesKey = Array.from(crypto.getRandomValues(new Uint8Array(32)))
-            .map((b) => b.toString(16).padStart(2, "0"))
-            .join("");
+            .map((b) => b.toString(16).padStart(2, '0'))
+            .join('');
 
           const encryptedCalibrationPoints = await encryptCalibrationData(
             calibration_points,
             aesKey
           ).catch((error) => {
-            console.error("Failed to encrypt calibration points:", error);
+            console.error('Failed to encrypt calibration points:', error);
             throw error;
           });
 
           const encryptedKey = await encryptPassword(aesKey).catch((error) => {
-            console.error("Failed to encrypt password:", error);
+            console.error('Failed to encrypt password:', error);
             throw error;
           });
 
@@ -320,11 +309,11 @@ const DogCalibration = () => {
 
           return axios
             .request({
-              method: "POST",
+              method: 'POST',
               url: SERVER_MIDDLEWARE_URL,
               data: calibrationDataString,
               headers: {
-                "Content-Type": "application/json",
+                'Content-Type': 'application/json',
               },
             })
             .then((response) => {
@@ -332,18 +321,18 @@ const DogCalibration = () => {
               setIsLoading(false);
               if (response.status === 200) {
                 // pass
+              } else {
+                navigate('/Error Page');
               }
-              else{
-                navigate("/Error Page");
-              }
-            }).catch((error) => {
-              console.error("Processing error:", error);
-              navigate("/Error");
-              console.log(error);    
+            })
+            .catch((error) => {
+              console.error('Processing error:', error);
+              navigate('/Error');
+              console.log(error);
             });
         } catch (error) {
-          console.error("Processing error:", error);
-          navigate("/Error");
+          console.error('Processing error:', error);
+          navigate('/Error');
           console.log(error);
         }
       }
@@ -351,11 +340,11 @@ const DogCalibration = () => {
       processAndSendData()
         .then((response) => {
           clearInterval(frameCaptureInterval);
-          console.log("Frame capturing stopped");
+          console.log('Frame capturing stopped');
         })
         .catch((err) => {
           clearInterval(frameCaptureInterval);
-          console.log("Frame capturing stopped");
+          console.log('Frame capturing stopped');
           console.log(err);
         });
     }
@@ -366,11 +355,11 @@ const DogCalibration = () => {
       id="parent-container"
       ref={parentRef}
       style={{
-        display: "flex",
-        flexDirection: "column",
-        width: "100vw",
-        height: "100vh",
-        backgroundColor: "#1b0c26",
+        display: 'flex',
+        flexDirection: 'column',
+        width: '100vw',
+        height: '100vh',
+        backgroundColor: '#1b0c26',
       }}
     >
       {isCircleVisible &&
@@ -390,10 +379,10 @@ const DogCalibration = () => {
         (isLoading ? (
           <div
             style={{
-              position: "absolute",
-              top: "50%",
-              left: "50%",
-              transform: "translate(-50%, -50%)",
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
             }}
           >
             <BeatLoader color="#ffffff" size={15} />
@@ -401,21 +390,21 @@ const DogCalibration = () => {
             <p
               className="mt-4"
               style={{
-                position: "absolute",
-                top: "50%",
-                left: "50%",
-                transform: "translate(-50%, -50%)",
-                backgroundColor: "rgba(138, 0, 194, 0.6)",
-                color: "white",
-                padding: "12px 24px",
-                borderRadius: "25px",
-                border: "none",
-                fontSize: "32px",
-                fontWeight: "bold",
-                cursor: "pointer",
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+                backgroundColor: 'rgba(138, 0, 194, 0.6)',
+                color: 'white',
+                padding: '12px 24px',
+                borderRadius: '25px',
+                border: 'none',
+                fontSize: '32px',
+                fontWeight: 'bold',
+                cursor: 'pointer',
               }}
             >
-              {" "}
+              {' '}
               Calibrating
             </p>
           </div>
@@ -423,19 +412,19 @@ const DogCalibration = () => {
           <button
             className="mt-4"
             style={{
-              position: "absolute",
-              top: "50%",
-              left: "50%",
-              transform: "translate(-50%, -50%)",
-              backgroundColor: "transparent", // Transparent background
-              color: "white",
-              padding: "12px 24px",
-              borderRadius: "50px", // Elliptical shape
-              border: "2px solid white", // White border
-              fontSize: "32px",
-              fontWeight: "bold",
-              cursor: "pointer",
-              transition: "background-color 0.3s ease, color 0.3s ease",
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              backgroundColor: 'transparent', // Transparent background
+              color: 'white',
+              padding: '12px 24px',
+              borderRadius: '50px', // Elliptical shape
+              border: '2px solid white', // White border
+              fontSize: '32px',
+              fontWeight: 'bold',
+              cursor: 'pointer',
+              transition: 'background-color 0.3s ease, color 0.3s ease',
             }}
             onClick={handleNextButtonClick}
           >
@@ -443,10 +432,10 @@ const DogCalibration = () => {
           </button>
         ))}
 
-      <div style={{ display: "none", flex: 1 }}>
+      <div style={{ display: 'none', flex: 1 }}>
         <video ref={videoRef} autoPlay playsInline></video>
       </div>
-      <canvas ref={canvasRef} style={{ flex: 1, display: "none" }} />
+      <canvas ref={canvasRef} style={{ flex: 1, display: 'none' }} />
     </div>
   );
 };

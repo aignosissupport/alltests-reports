@@ -3,7 +3,6 @@ import Chart from 'chart.js/auto';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 const CARS3 = () => {
-  
   const chartRef = useRef(null);
   const [CARSResponses, setCARSResponses] = useState([]);
 
@@ -12,36 +11,39 @@ const CARS3 = () => {
     return urlParams.get(name);
   };
 
-  const age = (getURLParameter("Age") || "N/A") + " Years";
-  const name = getURLParameter("Name") || "N/A";
+  const age = (getURLParameter('Age') || 'N/A') + ' Years';
+  const name = getURLParameter('Name') || 'N/A';
   const currentDate = new Date().toLocaleDateString();
-  const TOT_CARS = getURLParameter("TOT_CARS") || "N/A";
-  const carsInterpretation = getURLParameter("carsInterpretation") || "N/A";
+  const TOT_CARS = getURLParameter('TOT_CARS') || 'N/A';
+  const carsInterpretation = getURLParameter('carsInterpretation') || 'N/A';
 
   const CARSQuestions = [
     // "Relating to People", "Imitation", "Emotional Response", "Body Use",
-    // "Object Use", "Adaptation to Change", 
-    "Visual Response", "Listening Response",
-    "Taste, Smell, and Touch Response and Use", "Fear or Nervousness", "Verbal Communication",
-    "Nonverbal Communication", "Activity Level", "Level and Consistency of Intellectual Response",
-    "General Impressions"
+    // "Object Use", "Adaptation to Change",
+    'Visual Response',
+    'Listening Response',
+    'Taste, Smell, and Touch Response and Use',
+    'Fear or Nervousness',
+    'Verbal Communication',
+    'Nonverbal Communication',
+    'Activity Level',
+    'Level and Consistency of Intellectual Response',
+    'General Impressions',
   ];
 
   useEffect(() => {
     displayCARSResponses();
-    
   }, []);
 
   const displayCARSResponses = () => {
     const urlParams = new URLSearchParams(window.location.search);
     const responses = CARSQuestions.map((question, index) => {
-      const response = urlParams.get(`CARS_${index + 1}`) || "N/A";
+      const response = urlParams.get(`CARS_${index + 1}`) || 'N/A';
       return { question, response };
     });
     setCARSResponses(responses);
   };
 
-  
   return (
     <>
       <style>{`
@@ -89,25 +91,38 @@ const CARS3 = () => {
       <div className="pdf-image flex flex-col font-manrope items-center p-8 bg-white min-h-screen">
         <div className="pdf-page bg-white p-8 shadow-md rounded-md w-[210mm] h-[297mm]">
           <div>
-            <h1 className='text-left text-sm'>Childhood Autism Rating Scale Report</h1>
+            <h1 className="text-left text-sm">
+              Childhood Autism Rating Scale Report
+            </h1>
             <div className="w-full border-t-2 mt-2 border-[#9C00AD]"></div>
           </div>
 
-          <div className="container" style={{ width: "100%", maxWidth: "800px", margin: "auto" }}>
-            <h1 style={{
-              paddingBottom: "15px",
-              marginLeft: "-30vw",
-              fontFamily: '"Times New Roman", Times, serif',
-              fontWeight: "600",
-              fontSize: "xx-large",
-              color: "#94059f",
-            }}>
-              CARS <span style={{ color: "black" }}> Screening:</span>
+          <div
+            className="container"
+            style={{ width: '100%', maxWidth: '800px', margin: 'auto' }}
+          >
+            <h1
+              style={{
+                paddingBottom: '15px',
+                marginLeft: '-30vw',
+                fontFamily: '"Times New Roman", Times, serif',
+                fontWeight: '600',
+                fontSize: 'xx-large',
+                color: '#94059f',
+              }}
+            >
+              CARS <span style={{ color: 'black' }}> Screening:</span>
             </h1>
-           
 
             <div className="table-container">
-              <h2 style={{ color: "#94059f", fontSize: "20px", fontWeight: "bold", marginBottom: "10px" }}>
+              <h2
+                style={{
+                  color: '#94059f',
+                  fontSize: '20px',
+                  fontWeight: 'bold',
+                  marginBottom: '10px',
+                }}
+              >
                 CARS Responses:
               </h2>
               <table>
@@ -121,19 +136,29 @@ const CARS3 = () => {
                   {CARSResponses.map((item, index) => (
                     <tr key={index}>
                       <td>{item.question}</td>
-                      <td style={{ color: "#94059f" }}>{item.response}</td>
+                      <td style={{ color: '#94059f' }}>{item.response}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
-            <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
             <div className="w-full flex justify-between items-center text-xs font-manrope mt-40 border-t-2 border-[#800080] pt-2">
-              <span className='text-[10px]'>CARS Report - {name}</span>
+              <span className="text-[10px]">CARS Report - {name}</span>
               <div className="text-center text-[10px]">
                 <span>ID: Report Generation Date: {currentDate}</span>
               </div>
-              <span className='text-[10px]'>Page 17</span>
+              <span className="text-[10px]">Page 17</span>
             </div>
           </div>
         </div>

@@ -5,21 +5,21 @@ function ResultsPage() {
 
   const patientId = searchParams.get('patient_id');
   const transactionId = searchParams.get('transaction_id');
-//   const focalPointIOU = searchParams.get('Focal Point IOU');
-//   const jointAttentionError = searchParams.get('Joint Attention Error (%)');
-//   const eyeContactError = searchParams.get('Eye Contact Error');
-//   const gazeDispersion = searchParams.get('Gaze Dispersion (pixels)');
-//   const gazeSpeed = searchParams.get('Gaze Speed (px/sec)');
-//   const screenFocus = searchParams.get('Screen Focus (%)');
-//   const objectTrackingError = searchParams.get('Object Tracking Error (px)');
-//   const socialPreference = searchParams.get('Social Preference (%)');
-//   const gazeHolds = searchParams.get('Gaze Holds');
-//   const saccades = searchParams.get('Saccades (per second)');
-//   const lipSyncRecognisability = searchParams.get('LipSync Recognisability (%)');
-//   const convoRecognisability = searchParams.get('Convo Recognisability (%)');
-//   const meanYaw = searchParams.get('meanYaw (deg/sec)');
-//   const meanPitch = searchParams.get('meanPitch (deg/sec)');
-//   const meanRoll = searchParams.get('meanRoll (deg/sec)');
+  //   const focalPointIOU = searchParams.get('Focal Point IOU');
+  //   const jointAttentionError = searchParams.get('Joint Attention Error (%)');
+  //   const eyeContactError = searchParams.get('Eye Contact Error');
+  //   const gazeDispersion = searchParams.get('Gaze Dispersion (pixels)');
+  //   const gazeSpeed = searchParams.get('Gaze Speed (px/sec)');
+  //   const screenFocus = searchParams.get('Screen Focus (%)');
+  //   const objectTrackingError = searchParams.get('Object Tracking Error (px)');
+  //   const socialPreference = searchParams.get('Social Preference (%)');
+  //   const gazeHolds = searchParams.get('Gaze Holds');
+  //   const saccades = searchParams.get('Saccades (per second)');
+  //   const lipSyncRecognisability = searchParams.get('LipSync Recognisability (%)');
+  //   const convoRecognisability = searchParams.get('Convo Recognisability (%)');
+  //   const meanYaw = searchParams.get('meanYaw (deg/sec)');
+  //   const meanPitch = searchParams.get('meanPitch (deg/sec)');
+  //   const meanRoll = searchParams.get('meanRoll (deg/sec)');
 
   return (
     <div className="p-4">

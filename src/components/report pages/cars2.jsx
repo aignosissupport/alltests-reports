@@ -3,7 +3,6 @@ import Chart from 'chart.js/auto';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 const CARS2 = () => {
-  
   const chartRef = useRef(null);
   const [CARSResponses, setCARSResponses] = useState([]);
 
@@ -12,23 +11,36 @@ const CARS2 = () => {
     return urlParams.get(name);
   };
 
-  const age = (getURLParameter("Age") || "N/A") + " Years";
-  const name = getURLParameter("Name") || "N/A";
+  const age = (getURLParameter('Age') || 'N/A') + ' Years';
+  const name = getURLParameter('Name') || 'N/A';
   const currentDate = new Date().toLocaleDateString();
-  const TOT_CARS = getURLParameter("TOT_CARS") || "N/A";
-  const carsInterpretation = getURLParameter("carsInterpretation") || "N/A";
+  const TOT_CARS = getURLParameter('TOT_CARS') || 'N/A';
+  const carsInterpretation = getURLParameter('carsInterpretation') || 'N/A';
 
   const CARSQuestions = [
-    "Relating to People", "Imitation", "Emotional Response", "Body Use",
-    "Object Use", "Adaptation to Change", 
-    "Visual Response", "Listening Response",
-    "Taste, Smell, and Touch Response and Use", "Fear or Nervousness", "Verbal Communication",
-    "Nonverbal Communication", "Activity Level", "Level and Consistency of Intellectual Response",
-    "General Impressions"
+    'Relating to People',
+    'Imitation',
+    'Emotional Response',
+    'Body Use',
+    'Object Use',
+    'Adaptation to Change',
+    'Visual Response',
+    'Listening Response',
+    'Taste, Smell, and Touch Response and Use',
+    'Fear or Nervousness',
+    'Verbal Communication',
+    'Nonverbal Communication',
+    'Activity Level',
+    'Level and Consistency of Intellectual Response',
+    'General Impressions',
   ];
   const CARSQuestions1 = [
-    "Relating to People", "Imitation", "Emotional Response", "Body Use",
-    "Object Use", "Adaptation to Change", 
+    'Relating to People',
+    'Imitation',
+    'Emotional Response',
+    'Body Use',
+    'Object Use',
+    'Adaptation to Change',
     // "Visual Response", "Listening Response",
     // "Taste, Smell, and Touch Response and Use", "Fear or Nervousness", "Verbal Communication",
     // "Nonverbal Communication", "Activity Level", "Level and Consistency of Intellectual Response",
@@ -48,7 +60,7 @@ const CARS2 = () => {
   const displayCARSResponses = () => {
     const urlParams = new URLSearchParams(window.location.search);
     const responses = CARSQuestions1.map((question, index) => {
-      const response = urlParams.get(`CARS_${index + 1}`) || "N/A";
+      const response = urlParams.get(`CARS_${index + 1}`) || 'N/A';
       return { question, response };
     });
     setCARSResponses(responses);
@@ -61,42 +73,56 @@ const CARS2 = () => {
     });
 
     const barColors = [
-      "#ff5733", "#33ff57", "#5733ff", "#ff33a8", "#33a8ff",
-      "#a8ff33", "#ff8c33", "#33ff8c", "#8c33ff", "#ff338c",
-      "#338cff", "#8cff33", "#ffcc33", "#33ffcc", "#cc33ff"
+      '#ff5733',
+      '#33ff57',
+      '#5733ff',
+      '#ff33a8',
+      '#33a8ff',
+      '#a8ff33',
+      '#ff8c33',
+      '#33ff8c',
+      '#8c33ff',
+      '#ff338c',
+      '#338cff',
+      '#8cff33',
+      '#ffcc33',
+      '#33ffcc',
+      '#cc33ff',
     ];
 
-    const ctx = document.getElementById("CARSChart").getContext("2d");
+    const ctx = document.getElementById('CARSChart').getContext('2d');
 
     if (chartRef.current) {
       chartRef.current.destroy(); // Destroy any existing chart
     }
 
     chartRef.current = new Chart(ctx, {
-      type: "bar",
+      type: 'bar',
       data: {
         labels: CARSQuestions,
-        datasets: [{
-          label: "CARS Scores",
-          data: CARSscores,
-          backgroundColor: barColors,
-          borderWidth: 1
-        }]
+        datasets: [
+          {
+            label: 'CARS Scores',
+            data: CARSscores,
+            backgroundColor: barColors,
+            borderWidth: 1,
+          },
+        ],
       },
       options: {
-        indexAxis: "y",
+        indexAxis: 'y',
         responsive: true,
         maintainAspectRatio: false,
         plugins: {
           legend: { display: false },
           tooltip: { enabled: true },
           datalabels: {
-            color: "white",
-            anchor: "center",
-            align: "center",
-            font: { size: 12, weight: "bold" },
-            formatter: (value) => value.toFixed(2)
-          }
+            color: 'white',
+            anchor: 'center',
+            align: 'center',
+            font: { size: 12, weight: 'bold' },
+            formatter: (value) => value.toFixed(2),
+          },
         },
         scales: {
           x: {
@@ -104,20 +130,20 @@ const CARS2 = () => {
             max: 4,
             title: {
               display: true,
-              text: "Scores (0 - 4)",
-              font: { size: 14 }
-            }
+              text: 'Scores (0 - 4)',
+              font: { size: 14 },
+            },
           },
           y: {
             title: {
               display: true,
-              text: "CARS Questions",
-              font: { size: 14 }
-            }
-          }
-        }
+              text: 'CARS Questions',
+              font: { size: 14 },
+            },
+          },
+        },
       },
-      plugins: [ChartDataLabels]
+      plugins: [ChartDataLabels],
     });
   };
 
@@ -168,27 +194,41 @@ const CARS2 = () => {
       <div className="pdf-image flex flex-col font-manrope items-center p-8 bg-white min-h-screen">
         <div className="pdf-page bg-white p-8 shadow-md rounded-md w-[210mm] h-[297mm]">
           <div>
-            <h1 className='text-left text-sm'>Childhood Autism Rating Scale Report</h1>
+            <h1 className="text-left text-sm">
+              Childhood Autism Rating Scale Report
+            </h1>
             <div className="w-full border-t-2 mt-2 border-[#9C00AD]"></div>
           </div>
 
-          <div className="container" style={{ width: "100%", maxWidth: "800px", margin: "auto" }}>
-            <h1 style={{
-              paddingBottom: "15px",
-              marginLeft: "-30vw",
-              fontFamily: '"Times New Roman", Times, serif',
-              fontWeight: "600",
-              fontSize: "xx-large",
-              color: "#94059f",
-            }}>
-              CARS <span style={{ color: "black" }}> Screening:</span>
+          <div
+            className="container"
+            style={{ width: '100%', maxWidth: '800px', margin: 'auto' }}
+          >
+            <h1
+              style={{
+                paddingBottom: '15px',
+                marginLeft: '-30vw',
+                fontFamily: '"Times New Roman", Times, serif',
+                fontWeight: '600',
+                fontSize: 'xx-large',
+                color: '#94059f',
+              }}
+            >
+              CARS <span style={{ color: 'black' }}> Screening:</span>
             </h1>
             <div className="chart-container">
               <canvas id="CARSChart"></canvas>
             </div>
 
             <div className="table-container">
-              <h2 style={{ color: "#94059f", fontSize: "20px", fontWeight: "bold", marginBottom: "10px" }}>
+              <h2
+                style={{
+                  color: '#94059f',
+                  fontSize: '20px',
+                  fontWeight: 'bold',
+                  marginBottom: '10px',
+                }}
+              >
                 CARS Responses:
               </h2>
               <table>
@@ -202,18 +242,18 @@ const CARS2 = () => {
                   {CARSResponses.map((item, index) => (
                     <tr key={index}>
                       <td>{item.question}</td>
-                      <td style={{ color: "#94059f" }}>{item.response}</td>
+                      <td style={{ color: '#94059f' }}>{item.response}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
             <div className="w-full flex justify-between items-center text-xs font-manrope mt-6 border-t-2 border-[#800080] pt-2">
-              <span className='text-[10px]'>CARS Report - {name}</span>
+              <span className="text-[10px]">CARS Report - {name}</span>
               <div className="text-center text-[10px]">
                 <span>ID: Report Generation Date: {currentDate}</span>
               </div>
-              <span className='text-[10px]'>Page 16</span>
+              <span className="text-[10px]">Page 16</span>
             </div>
           </div>
         </div>

@@ -19,11 +19,11 @@ export const AppProvider = ({ children }) => {
     patienthistoryform2Data: '',
     patienthistoryform3Data: '',
     patienthistoryform4Data: '',
-    videolanguage:'',
-    mchatscore:'',
-    carsscore:'',
-    isaascore:'',
-    inclenscore:'',
+    videolanguage: '',
+    mchatscore: '',
+    carsscore: '',
+    isaascore: '',
+    inclenscore: '',
   });
 
   // Pass the state and updater function to the provider

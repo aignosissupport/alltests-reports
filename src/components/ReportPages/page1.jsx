@@ -1,23 +1,22 @@
 import React, { useContext } from 'react';
 import backgroundImage from '../../assets/page1bg.png'; // Importing the background image
 // import { useLocation } from 'react-router-dom';
-import { AppContext } from "../../AppContext";
+import { AppContext } from '../../AppContext';
 
 function ReportPage() {
-    // const location = useLocation();
-    // const getQueryParams = (search) => {
-    //   const params = new URLSearchParams(search);
-    //   return {
-    //     dob: params.get("patientDOB"),
-    //     name: params.get("name"),
-    //   };
-    // };
-  
-    // const {dob, name } = getQueryParams(location.search);
-      const { testData,  } = useContext(AppContext);
-      let name = testData.name;
+  // const location = useLocation();
+  // const getQueryParams = (search) => {
+  //   const params = new URLSearchParams(search);
+  //   return {
+  //     dob: params.get("patientDOB"),
+  //     name: params.get("name"),
+  //   };
+  // };
 
-  
+  // const {dob, name } = getQueryParams(location.search);
+  const { testData } = useContext(AppContext);
+  let name = testData.name;
+
   return (
     <div style={styles.container}>
       <div style={styles.logo}>Ai.gnosis</div>
@@ -41,7 +40,7 @@ const styles = {
     position: 'relative',
     height: '100vh',
     width: '100vw',
-    backgroundColor: '#1b0238' , // Changed to a solid colorbackground: #33253E;
+    backgroundColor: '#1b0238', // Changed to a solid colorbackground: #33253E;
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
