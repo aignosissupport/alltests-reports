@@ -148,7 +148,7 @@ const ISAA = () => {
                 Name: {patientData.name}
               </td>
               <td className="text-left border px-4 py-2">
-                Age: {patientData.age_month}
+                Age: {(patientData.age_month / 12).toFixed(1)} years
               </td>
               <td className="text-left border px-4 py-2">
                 Gender: {patientData.gender}
