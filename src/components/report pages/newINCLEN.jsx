@@ -50,7 +50,7 @@ const INCLEN = () => {
   };
 
   const signatureMap = {
-    'deekhsa': 'https://storage.googleapis.com/aignosis_static_assets/Screening-Report/psych_deeksha_sign.jpg',
+    'deeksha': 'https://storage.googleapis.com/aignosis_static_assets/Screening-Report/psych_deeksha_sign.jpg',
     'harshita': 'https://storage.googleapis.com/aignosis_static_assets/Screening-Report/psych_harshita_sign.jpg',
     'poonam': 'https://storage.googleapis.com/aignosis_static_assets/Screening-Report/psych_poonam_sign.png',
     // Add more if needed
