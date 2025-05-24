@@ -3,69 +3,8 @@ import Chart from 'chart.js/auto';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 const ISAA = () => {
-  const ISAAQuestions = [
-    [
-      'Has poor eye contact',
-      'Lacks social smile',
-      'Remains aloof',
-      'Does not reach out to others',
-      'Unable to relate to people',
-      'Unable to respond to social/environmental cues',
-      'Engages in solitary and repetitive play activities',
-      'Unable to take turns in social interaction',
-      'Does not maintain peer relationships',
-    ],
-    [
-      'Inconsistent attention and concentration',
-      'Shows delay in responding',
-      'Has unusual memory of some kind',
-      "Has 'savant' ability",
-    ],
-    [
-      'Shows inappropriate emotional response',
-      'Shows exaggerated emotions',
-      'Engages in self-stimulating emotions',
-      'Lacks fear of danger',
-      'Excited or agitated for no apparent reason',
-    ],
-    [
-      'Acquired speech and lost it',
-      'Has difficulty in using non-verbal language or gestures to communicate',
-      'Engages in stereotyped and repetitive use of language',
-      'Engages in echolalic speech',
-      'Produces infantile squeals/unusual noises',
-      'Unable to initiate or sustain conversation with others',
-      'Uses jargon or meaningless words',
-      'Uses pronoun reversals',
-      'Unable to grasp pragmatics of communication (real meaning)',
-    ],
-    [
-      'Engages in stereotyped and repetitive motor mannerisms',
-      'Shows attachment to inanimate objects',
-      'Shows hyperactivity/restlessness',
-      'Exhibits aggressive behavior',
-      'Throws temper tantrums',
-      'Engages in self-injurious behavior',
-      'Insists on sameness',
-    ],
-    [
-      'Unusually sensitive to sensory stimuli',
-      'Stares into space for long periods of time',
-      'Has difficulty in tracking objects',
-      'Has unusual vision',
-      'Insensitive to pain',
-      'Responds to objects/people unusually by smelling, touching or tasting',
-    ],
-  ];
 
-  const domainNames = [
-    'Social Relationship and Reciprocity',
-    'Cognitive Component',
-    'Emotional Responsiveness',
-    'Speech, Language, and Communication',
-    'Behavioral Patterns',
-    'Sensory Aspects',
-  ];
+  const signature_url = "https://storage.googleapis.com/aignosis_static_assets/Screening-Report/deeksha_sign_editted.png"
 
   const getURLParameter = (name) => {
     const urlParams = new URLSearchParams(window.location.search);
@@ -87,20 +26,28 @@ const ISAA = () => {
   const patientData = {
     dob: formatDate(getURLParameter('Date_of_Birth')) || 'N/A',
     doa: formatDate(getURLParameter('Date_of_Assessment')) || 'N/A',
-    socialResponsiveness:
-      parseFloat(getURLParameter('social_response')) || 'N/A',
-    emotionalResponsiveness:
-      parseFloat(getURLParameter('emotional_response')) || 'N/A',
-    speechRecognition:
-      parseFloat(getURLParameter('speech_recognition')) || 'N/A',
-    behaviouralPattern:
-      parseFloat(getURLParameter('behaviour_pattern')) || 'N/A',
+    socialResponsiveness: parseFloat(getURLParameter('social_response')) || 'N/A',
+    emotionalResponsiveness: parseFloat(getURLParameter('emotional_response')) || 'N/A',
+    speechRecognition: parseFloat(getURLParameter('speech_recognition')) || 'N/A',
+    behaviouralPattern: parseFloat(getURLParameter('behaviour_pattern')) || 'N/A',
     sensoryAspects: parseFloat(getURLParameter('sensory_aspect')) || 'N/A',
     cognitiveComponent: parseFloat(getURLParameter('cognitive')) || 'N/A',
     TOT_ISAA: parseFloat(getURLParameter('TOT_ISAA')) || 'N/A',
     isaaInterpretation: getURLParameter('isaaInterpretation') || 'N/A',
     name: getURLParameter('Name') || 'N/A',
+    assessor: (getURLParameter("Assessor")?.toLowerCase().split(" ")[0]) || "N/A"
   };
+
+
+  const signatureMap = {
+    'deekhsa': 'https://storage.googleapis.com/aignosis_static_assets/Screening-Report/psych_deeksha_sign.jpg',
+    'harshita': 'https://storage.googleapis.com/aignosis_static_assets/Screening-Report/psych_harshita_sign.jpg',
+    'poonam': 'https://storage.googleapis.com/aignosis_static_assets/Screening-Report/psych_poonam_sign.png',
+    // Add more if needed
+  };  
+
+  const signatureUrl = signatureMap[patientData.assessor];
+
 
   const currentDate = new Date().toLocaleDateString();
 
@@ -189,7 +136,7 @@ const ISAA = () => {
           </tbody>
         </table>
 
-        <div className="mt-12 text-gray-800">
+        <div className="mt-12 text-left text-gray-800">
           {patientData.TOT_ISAA >= 63 && patientData.TOT_ISAA <= 69 ? (
             <p>
               The Score on ISAA {patientData.TOT_ISAA} suggests the presence of
@@ -203,6 +150,17 @@ const ISAA = () => {
             </p>
           )}
         </div>
+
+        
+
+        {signatureUrl && (
+          <div className="absolute bottom-[130px] right-[100px]">
+            <div className="flex flex-col items-start text-xs text-gray-500">
+              <img src={signatureUrl} alt="Digital Signature" className="h-[150px] w-auto" />
+            </div>
+          </div>
+        )}
+
 
         <div className="absolute bottom-8 left-8 right-8 flex justify-between text-xs text-gray-500 border-t border-purple-800 pt-2">
           <span>ISAA Report - {patientData.name}</span>

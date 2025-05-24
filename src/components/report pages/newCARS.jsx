@@ -26,7 +26,18 @@ const CARS = () => {
     name: getURLParameter('Name') || 'N/A',
     TOT_CARS: getURLParameter('TOT_CARS') || 'N/A',
     carsInterpretation: getURLParameter('carsInterpretation') || 'N/A',
+    assessor: (getURLParameter("Assessor")?.toLowerCase().split(" ")[0]) || "N/A"
+
   };
+
+  const signatureMap = {
+    'deekhsa': 'https://storage.googleapis.com/aignosis_static_assets/Screening-Report/psych_deeksha_sign.jpg',
+    'harshita': 'https://storage.googleapis.com/aignosis_static_assets/Screening-Report/psych_harshita_sign.jpg',
+    'poonam': 'https://storage.googleapis.com/aignosis_static_assets/Screening-Report/psych_poonam_sign.png',
+    // Add more if needed
+  };  
+
+  const signatureUrl = signatureMap[patientData.assessor];
 
   useEffect(() => {
     // displayData logic if needed later
@@ -86,6 +97,14 @@ const CARS = () => {
             </tr>
           </tbody>
         </table>
+
+        {signatureUrl && (
+          <div className="absolute bottom-[130px] right-[100px]">
+            <div className="flex flex-col items-start text-xs text-gray-500">
+              <img src={signatureUrl} alt="Digital Signature" className="h-[150px] w-auto" />
+            </div>
+          </div>
+        )}
 
         <div className="absolute bottom-8 left-8 right-8 flex justify-between text-xs text-gray-500 border-t border-purple-800 pt-2">
           <span>CARS Report - {patientData.name}</span>
