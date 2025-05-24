@@ -97,10 +97,6 @@ const MCHAT = () => {
               <td className="border px-4 py-2">8-20+</td>
               <td className="border px-4 py-2">Severe Risk of Autism</td>
             </tr>
-            <tr>
-              <td className="border px-4 py-2">Greater than 153</td>
-              <td className="border px-4 py-2">Severe Autism</td>
-            </tr>
           </tbody>
         </table>
 
