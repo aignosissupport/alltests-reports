@@ -9,6 +9,7 @@ import MCHAT from "./newMCHAT";
 import CARS from "./newCARS";
 import INCLEN from "./newINCLEN"; 
 import PatientHistory from "./PatientHistory";
+import IMPRESSIONS from "./Impressions";
 const pdfData = [
   {
     url:
@@ -86,58 +87,73 @@ const SecondpdfData = [
 ];
 
 const ComponentToPrint = React.forwardRef(
-  ({ isisaaChecked, ismchatChecked, iscarsChecked, isinclenChecked }, ref) => (
-    <div
-      id="pdf-container"
-      ref={ref}
-      style={{ width: "794px", minHeight: "1123px" }}
-    >
-      {pdfData.map((item, index) => (
-        <Commnpdfpage
-          key={`pdfData-${index}`}
-          src={item.url}
-          alttext={item.alttext}
-        />
-      ))}
+  ({ isisaaChecked, ismchatChecked, iscarsChecked, isinclenChecked }, ref) => {
+    const reportSections = [
+      isisaaChecked && "ISAA",
+      ismchatChecked && "MCHAT",
+      iscarsChecked && "CARS",
+      isinclenChecked && "INCLEN",
+    ].filter(Boolean);
 
-      <div id="patient-history" className="isaa-page">
-        <PatientHistory />
+    const lastSection = reportSections[reportSections.length - 1];
+
+    return (
+      <div
+        id="pdf-container"
+        ref={ref}
+        style={{ width: "794px", minHeight: "1123px" }}
+      >
+        {pdfData.map((item, index) => (
+          <Commnpdfpage
+            key={`pdfData-${index}`}
+            src={item.url}
+            alttext={item.alttext}
+          />
+        ))}
+
+        <div id="patient-history" className="isaa-page">
+          <PatientHistory />
+        </div>
+
+        {isisaaChecked && (
+          <div id="isaa" className="isaa-page">
+            <ISAA isLastPage={lastSection === "ISAA"} />
+          </div>
+        )}
+
+        {ismchatChecked && (
+          <div id="mchat" className="isaa-page">
+            <MCHAT isLastPage={lastSection === "MCHAT"} />
+          </div>
+        )}
+
+        {iscarsChecked && (
+          <div id="cars" className="isaa-page">
+            <CARS isLastPage={lastSection === "CARS"} />
+          </div>
+        )}
+
+        {isinclenChecked && (
+          <div id="inclen" className="isaa-page">
+            <INCLEN isLastPage={lastSection === "INCLEN"} />
+          </div>
+        )}
+
+        {SecondpdfData.map((item, index) => (
+          <Commnpdfpage
+            key={`SecondpdfData-${index}`}
+            src={item.url}
+            alttext={item.alttext}
+          />
+        ))}
       </div>
-
-      {isisaaChecked && (
-        <div id="isaa" className="isaa-page">
-          <ISAA />
-        </div>
-      )}
-
-      {ismchatChecked && (
-        <div id="mchat" className="isaa-page">
-          <MCHAT />
-        </div>
-      )}
-
-      {iscarsChecked && (
-        <div id="cars" className="isaa-page">
-          <CARS />
-        </div>
-      )}
-
-      {isinclenChecked && (
-        <div id="inclen" className="isaa-page">
-          <INCLEN />
-        </div>
-      )}
-
-      {SecondpdfData.map((item, index) => (
-        <Commnpdfpage
-          key={`SecondpdfData-${index}`}
-          src={item.url}
-          alttext={item.alttext}
-        />
-      ))}
-    </div>
-  )
+    );
+  }
 );
+
+
+
+
 
 const GeneratePDF = () => {
   const getURLParameter = (name) => {
@@ -167,8 +183,8 @@ const GeneratePDF = () => {
 
  
     // Update state based on checkbox name
-    if (name === "mchat") setIsmchatChecked(checked);
     if (name === "isaa") setIsisaaChecked(checked);
+    if (name === "mchat") setIsmchatChecked(checked);
     if (name === "cars") setIscarsChecked(checked);
     if (name === "inclen") setIsinclenChecked(checked);
   };
@@ -210,18 +226,8 @@ const GeneratePDF = () => {
   };
 
   return (
-    <div className="text-center ml-[30%]">
-      <div className="mb-4">
-        <label>
-          <input
-            type="checkbox"
-            name="mchat"
-            checked={ismchatChecked}
-            onChange={(e) => handleCheckboxChange(e, 10)}
-          />
-          MCHAT
-        </label>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <div className="flex flex-col items-center justify-center text-center">
+      <div className="mb-4 mt-4">
         <label>
           <input
             type="checkbox"
@@ -235,12 +241,23 @@ const GeneratePDF = () => {
         <label>
           <input
             type="checkbox"
+            name="mchat"
+            checked={ismchatChecked}
+            onChange={(e) => handleCheckboxChange(e, 10)}
+          />
+          MCHAT
+        </label>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label>
+          <input
+            type="checkbox"
             name="cars"
             checked={iscarsChecked}
             onChange={(e) => handleCheckboxChange(e, 12)}
           />
           CARS
         </label>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <label>
           <input
             type="checkbox"
@@ -252,7 +269,7 @@ const GeneratePDF = () => {
         </label>
       </div>
       <button
-        className="mt-5 px-4 ml-[-30%] py-2 bg-blue-600 text-white rounded"
+        className="mt-5 mb-5  px-5 py-3 bg-green-500 text-white rounded"
         onClick={generatePDF}
         disabled={loading}
       >

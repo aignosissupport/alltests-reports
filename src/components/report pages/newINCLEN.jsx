@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import Chart from 'chart.js/auto';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 
-const INCLEN = () => {
+const INCLEN = ({isLastPage}) => {
   const getURLParameter = (name) => {
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get(name);
@@ -45,7 +45,8 @@ const INCLEN = () => {
       getURLParameter('INCLEN_B11').startsWith('No ASD')
         ? 0
         : 1,
-    assessor: (getURLParameter("Assessor")?.toLowerCase().split(" ")[0]) || "N/A"
+    assessor: (getURLParameter("Assessor")?.toLowerCase().split(" ")[0]) || "N/A",
+    impression: getURLParameter('impression') || "N/A",
 
   };
 
@@ -163,13 +164,24 @@ const INCLEN = () => {
           )}
         </div>
 
+        {isLastPage && (
+          <div className="mt-12 border-t border-gray-300 pt-4 text-left text-gray-800">
+            <h3 className="text-md font-semibold text-purple-800 mb-2">Impressions</h3>
+            <p>
+              Based on the assessment scores and behavioral observations, the child shows 
+              {patientData.impression?.toLowerCase().includes('no') ? ' no significant signs of Autism Spectrum Disorder.' : ' indications consistent with Autism Spectrum Disorder.'}
+            </p>
+          </div>
+        )}
+
         {signatureUrl && (
-          <div className="absolute bottom-[130px] right-[100px]">
+          <div className="mt-6 pl-3 flex justify-start">
             <div className="flex flex-col items-start text-xs text-gray-500">
               <img src={signatureUrl} alt="Digital Signature" className="h-[150px] w-auto" />
             </div>
           </div>
         )}
+
 
         <div className="absolute bottom-8 left-8 right-8 flex justify-between text-xs text-gray-500 border-t border-purple-800 pt-2">
           <span>INCLEN Report - {patientData.name}</span>
