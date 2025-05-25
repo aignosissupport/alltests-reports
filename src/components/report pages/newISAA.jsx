@@ -156,8 +156,8 @@ const ISAA = ({isLastPage}) => {
           <div className="mt-12 border-t border-gray-300 pt-4 text-left text-gray-800">
             <h3 className="text-md font-semibold text-purple-800 mb-2">Impressions</h3>
             <p>
-              Based on the assessment scores and behavioral observations, the child shows 
-              {patientData.impression?.toLowerCase().includes('no') ? ' no significant signs of Autism Spectrum Disorder.' : ' indications consistent with Autism Spectrum Disorder.'}
+              Based on the assessment scores and behavioral observations:<br />
+              {patientData.impression?.toLowerCase()}
             </p>
           </div>
         )}
@@ -169,8 +169,6 @@ const ISAA = ({isLastPage}) => {
             </div>
           </div>
         )}
-
-
 
         <div className="absolute bottom-8 left-8 right-8 flex justify-between text-xs text-gray-500 border-t border-purple-800 pt-2">
           <span>ISAA Report - {patientData.name}</span>

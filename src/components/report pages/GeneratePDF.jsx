@@ -9,7 +9,6 @@ import MCHAT from "./newMCHAT";
 import CARS from "./newCARS";
 import INCLEN from "./newINCLEN"; 
 import PatientHistory from "./PatientHistory";
-import IMPRESSIONS from "./Impressions";
 const pdfData = [
   {
     url:
