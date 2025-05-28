@@ -23,7 +23,7 @@ const MCHAT = ({isLastPage}) => {
   const patientData = {
     dob: formatDate(getURLParameter('Date_of_Birth')) || 'N/A',
     doa: formatDate(getURLParameter('Date_of_Assessment')) || 'N/A',
-    name: getURLParameter('Name') || 'N/A',
+    name: (getURLParameter('Name') || 'N/A').trim(),
     mchatScore: getURLParameter('MCHATscore') || 'N/A',
     MCHATinterpretation: getURLParameter('MCHATinterpretation')?.toLowerCase() || 'N/A',
     assessor: (getURLParameter("Assessor")?.toLowerCase().split(" ")[0]) || "N/A",
