@@ -25,7 +25,7 @@ const MCHAT = ({isLastPage}) => {
     doa: formatDate(getURLParameter('Date_of_Assessment')) || 'N/A',
     name: getURLParameter('Name') || 'N/A',
     mchatScore: getURLParameter('MCHATscore') || 'N/A',
-    MCHATinterpretation: getURLParameter('MCHATinterpretation') || 'N/A',
+    MCHATinterpretation: getURLParameter('MCHATinterpretation')?.toLowerCase() || 'N/A',
     assessor: (getURLParameter("Assessor")?.toLowerCase().split(" ")[0]) || "N/A",
     impression: getURLParameter('impression') || "N/A",
    };
@@ -91,11 +91,11 @@ const MCHAT = ({isLastPage}) => {
             </tr>
             <tr>
               <td className="border px-4 py-2">3-7</td>
-              <td className="border px-4 py-2">Mild Risk of Autism</td>
+              <td className="border px-4 py-2">Medium Risk of Autism</td>
             </tr>
             <tr>
               <td className="border px-4 py-2">8-20+</td>
-              <td className="border px-4 py-2">Severe Risk of Autism</td>
+              <td className="border px-4 py-2">High Risk of Autism</td>
             </tr>
           </tbody>
         </table>
@@ -103,8 +103,7 @@ const MCHAT = ({isLastPage}) => {
         <p className="mt-8 pt-8 text-justify text-gray-700">
           The caregiver of {patientData.name} completed the MCHAT-R, and based
           on the results, the child scored a total of {patientData.mchatScore}.
-          This score indicates that {patientData.name} falls within the{' '}
-          {patientData.MCHATinterpretation} risk range for Autism.
+          This score indicates that {patientData.name} falls within the {patientData.MCHATinterpretation} risk range for Autism.
         </p>
 
         {isLastPage && (
