@@ -102,8 +102,8 @@ const MCHAT = ({isLastPage}) => {
 
         <p className="mt-8 pt-8 text-justify text-gray-700">
           The caregiver of {patientData.name} completed the MCHAT-R, and based
-          on the results, the child scored a total of {patientData.mchatScore}.
-          {patientData.name} score places him in the {patientData.MCHATinterpretation}-risk category for Autism.
+          on the results, the child scored a total of {patientData.mchatScore}. {patientData.name}'s score places 
+          him in the {patientData.MCHATinterpretation}-risk category for Autism.
         </p>
 
         {isLastPage && (
