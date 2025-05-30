@@ -88,10 +88,10 @@ const SecondpdfData = [
 const ComponentToPrint = React.forwardRef(
   ({ isisaaChecked, ismchatChecked, iscarsChecked, isinclenChecked }, ref) => {
     const reportSections = [
-      isisaaChecked && "ISAA",
       ismchatChecked && "MCHAT",
-      iscarsChecked && "CARS",
       isinclenChecked && "INCLEN",
+      isisaaChecked && "ISAA",
+      iscarsChecked && "CARS",
     ].filter(Boolean);
 
     const lastSection = reportSections[reportSections.length - 1];
