@@ -114,27 +114,27 @@ const ComponentToPrint = React.forwardRef(
           <PatientHistory />
         </div>
 
-        {isisaaChecked && (
-          <div id="isaa" className="isaa-page">
-            <ISAA isLastPage={lastSection === "ISAA"} />
-          </div>
-        )}
-
         {ismchatChecked && (
           <div id="mchat" className="isaa-page">
             <MCHAT isLastPage={lastSection === "MCHAT"} />
           </div>
         )}
 
-        {iscarsChecked && (
-          <div id="cars" className="isaa-page">
-            <CARS isLastPage={lastSection === "CARS"} />
-          </div>
-        )}
-
         {isinclenChecked && (
           <div id="inclen" className="isaa-page">
             <INCLEN isLastPage={lastSection === "INCLEN"} />
+          </div>
+        )}
+
+        {isisaaChecked && (
+          <div id="isaa" className="isaa-page">
+            <ISAA isLastPage={lastSection === "ISAA"} />
+          </div>
+        )}
+
+        {iscarsChecked && (
+          <div id="cars" className="isaa-page">
+            <CARS isLastPage={lastSection === "CARS"} />
           </div>
         )}
 
