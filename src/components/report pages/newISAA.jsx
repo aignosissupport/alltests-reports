@@ -24,7 +24,7 @@ const ISAA = ({isLastPage}) => {
   };
 
   const patientData = {
-    dob: formatDate(getURLParameter('Date_of_Birth')) || 'N/A',
+    dob: formatDate(getURLParameter('dob')) || 'N/A',
     doa: formatDate(getURLParameter('Date_of_Assessment')) || 'N/A',
     socialResponsiveness: parseFloat(getURLParameter('social_response')) || 'N/A',
     emotionalResponsiveness: parseFloat(getURLParameter('emotional_response')) || 'N/A',

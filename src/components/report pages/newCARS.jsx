@@ -21,7 +21,7 @@ const CARS = ({isLastPage}) => {
   };
 
   const patientData = {
-    dob: formatDate(getURLParameter('Date_of_Birth')) || 'N/A',
+    dob: formatDate(getURLParameter('dob')) || 'N/A',
     doa: formatDate(getURLParameter('Date_of_Assessment')) || 'N/A',
     name: getURLParameter('Name') || 'N/A',
     TOT_CARS: getURLParameter('TOT_CARS') || 'N/A',
