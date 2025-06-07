@@ -137,9 +137,8 @@ const INCLEN = ({isLastPage}) => {
           </tbody>
         </table>
 
-        <div className="mt-12 text-gray-800">
-          {patientData.INCLENscore === '1' ||
-          (patientData.INCLENscore === '0') ? (
+        <div className="mt-12 text-gray-800 text-left">
+          {String(patientData.INCLENscore).trim() === '1' ? (
             <>
               The scores of INDT-ASD were indicating that the child has Autism
               Spectrum Disorder.
