@@ -111,7 +111,12 @@ const MCHAT = ({isLastPage}) => {
             <h3 className="text-md font-semibold text-purple-800 mb-2">Impressions</h3>
             <p>
               Based on the assessment scores and behavioral observations:<br />
-              {patientData.impression}
+              {patientData.impression.split('\n').map((line, i) => (
+                <React.Fragment key={i}>
+                  {line}
+                  <br />
+                </React.Fragment>
+              ))}
             </p>
 
           </div>

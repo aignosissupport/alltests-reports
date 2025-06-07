@@ -37,7 +37,6 @@ const INCLEN = ({isLastPage}) => {
     INCLEN_B9: getURLParameter('INCLEN_B9') || 'N/A',
     assessor: (getURLParameter("Assessor")?.toLowerCase().split(" ")[0]) || "N/A",
     impression: getURLParameter('impression') || "N/A",
-
   };
 
   const signatureMap = {
@@ -119,7 +118,7 @@ const INCLEN = ({isLastPage}) => {
             </tr>
             <tr>
               <td className="border px-4 py-2">Interpretation (1-4)</td>
-              <td className="border px-4 py-2">{patientData.INCLEN_B5}</td>
+              <td className="border px-4 py-2">{patientData.INCLEN_B5?.charAt(0)}</td>
             </tr>
             <tr>
               <td className="border px-4 py-2">
@@ -159,10 +158,16 @@ const INCLEN = ({isLastPage}) => {
             <h3 className="text-md font-semibold text-purple-800 mb-2">Impressions</h3>
             <p>
               Based on the assessment scores and behavioral observations:<br />
-              {patientData.impression}
+              {patientData.impression.split('\n').map((line, i) => (
+                <React.Fragment key={i}>
+                  {line}
+                  <br />
+                </React.Fragment>
+              ))}
             </p>
           </div>
         )}
+
 
         {signatureUrl && (
           <div className="mt-6 pl-3 flex justify-start">
