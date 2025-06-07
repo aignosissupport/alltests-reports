@@ -31,20 +31,10 @@ const INCLEN = ({isLastPage}) => {
     INCLEN_B3: getURLParameter('INCLEN_B3') || 'N/A',
     INCLEN_B4: getURLParameter('INCLEN_B4') || 'N/A',
     INCLEN_B5: getURLParameter('INCLEN_B5') || 'N/A',
-    INCLEN_B6:
-      getURLParameter('INCLEN_B6') &&
-      getURLParameter('INCLEN_B6').toLowerCase() !== 'nan'
-        ? 1
-        : 0,
+    INCLEN_B6: getURLParameter('INCLEN_B6') || 'N/A',
     INCLEN_B7: getURLParameter('INCLEN_B7') || 'N/A',
     INCLEN_B8: getURLParameter('INCLEN_B8') || 'N/A',
     INCLEN_B9: getURLParameter('INCLEN_B9') || 'N/A',
-    INCLEN_B10: getURLParameter('INCLEN_B10') || 'N/A',
-    INCLEN_B11:
-      getURLParameter('INCLEN_B11') &&
-      getURLParameter('INCLEN_B11').startsWith('No ASD')
-        ? 0
-        : 1,
     assessor: (getURLParameter("Assessor")?.toLowerCase().split(" ")[0]) || "N/A",
     impression: getURLParameter('impression') || "N/A",
 
@@ -169,7 +159,7 @@ const INCLEN = ({isLastPage}) => {
             <h3 className="text-md font-semibold text-purple-800 mb-2">Impressions</h3>
             <p>
               Based on the assessment scores and behavioral observations:<br />
-              {patientData.impression?.toLowerCase()}
+              {patientData.impression}
             </p>
           </div>
         )}

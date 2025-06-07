@@ -157,7 +157,7 @@ const ISAA = ({isLastPage}) => {
             <h3 className="text-md font-semibold text-purple-800 mb-2">Impressions</h3>
             <p>
               Based on the assessment scores and behavioral observations:<br />
-              {patientData.impression?.toLowerCase()}
+              {patientData.impression}
             </p>
           </div>
         )}
