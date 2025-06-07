@@ -104,45 +104,45 @@ const INCLEN = ({isLastPage}) => {
           </thead>
           <tbody>
             <tr>
-              <td className="border px-4 py-2">Social Interaction</td>
+              <td className="border px-4 py-2">Social Interaction & Communication</td>
               <td className="border px-4 py-2">
                 {patientData.INCLEN_B1.charAt(0)}
               </td>
             </tr>
             <tr>
-              <td className="border px-4 py-2">Comunication</td>
+              <td className="border px-4 py-2">Restricted & Repetitive behavior</td>
               <td className="border px-4 py-2">
                 {patientData.INCLEN_B2.charAt(0)}
               </td>
             </tr>
             <tr>
-              <td className="border px-4 py-2">Restricted Interests</td>
+              <td className="border px-4 py-2">Early onset</td>
               <td className="border px-4 py-2">
                 {patientData.INCLEN_B3.charAt(0)}
               </td>
             </tr>
             <tr>
-              <td className="border px-4 py-2">Early Onset</td>
+              <td className="border px-4 py-2">Impaired Functioning</td>
               <td className="border px-4 py-2">
-                {patientData.INCLEN_B7.charAt(0)}
+                {patientData.INCLEN_B4.charAt(0)}
               </td>
             </tr>
             <tr>
-              <td className="border px-4 py-2">Impaired function</td>
-              <td className="border px-4 py-2">{patientData.INCLEN_B6}</td>
+              <td className="border px-4 py-2">Interpretation (1-4)</td>
+              <td className="border px-4 py-2">{patientData.INCLEN_B5}</td>
             </tr>
             <tr>
               <td className="border px-4 py-2">
                 Total Number of Criteria fulfilled
               </td>
               <td className="border px-4 py-2">
-                {patientData.INCLEN_B4.charAt(0)}
+                {patientData.INCLEN_B6.charAt(0)}
               </td>
             </tr>
             <tr>
               <td className="border px-4 py-2">Summary Assesment of ASD</td>
               <td className="border px-4 py-2">
-                {patientData.INCLEN_B5.charAt(0)}
+                {patientData.INCLEN_B7.charAt(0)}
               </td>
             </tr>
           </tbody>
