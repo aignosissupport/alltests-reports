@@ -15,21 +15,21 @@ const pdfData = [
       "https://storage.googleapis.com/aignosis_static_assets/Screening-Report/page1.1.png",
     alttext: "report page 1",
   },
-  {
-    url:
-      "https://storage.googleapis.com/aignosis_static_assets/Screening-Report/page1.2.png",
-    alttext: "report page 2",
-  },
-  {
-    url:
-      "https://storage.googleapis.com/aignosis_static_assets/Screening-Report/page1.3.png",
-    alttext: "report page 3",
-  },
-  {
-    url:
-      "https://storage.googleapis.com/aignosis_static_assets/Screening-Report/page1.4.png",
-    alttext: "report page 4",
-  },
+  // {
+  //   url:
+  //     "https://storage.googleapis.com/aignosis_static_assets/Screening-Report/page1.2.png",
+  //   alttext: "report page 2",
+  // },
+  // {
+  //   url:
+  //     "https://storage.googleapis.com/aignosis_static_assets/Screening-Report/page1.3.png",
+  //   alttext: "report page 3",
+  // },
+  // {
+  //   url:
+  //     "https://storage.googleapis.com/aignosis_static_assets/Screening-Report/page1.4.png",
+  //   alttext: "report page 4",
+  // },
   {
     url:
       "https://storage.googleapis.com/aignosis_static_assets/Screening-Report/page1.5.png",
@@ -40,49 +40,49 @@ const pdfData = [
       "https://storage.googleapis.com/aignosis_static_assets/Screening-Report/page1.6.png",
     alttext: "report page 6",
   },
-  {
-    url:
-      "https://storage.googleapis.com/aignosis_static_assets/Screening-Report/page1.7.png",
-    alttext: "report page 7",
-  },
+  // {
+  //   url:
+  //     "https://storage.googleapis.com/aignosis_static_assets/Screening-Report/page1.7.png",
+  //   alttext: "report page 7",
+  // },
 ];
 
 const SecondpdfData = [
-  {
-    url:
-      "https://storage.googleapis.com/aignosis_static_assets/Screening-Report/page2.1.png",
-    alttext: "report page 13",
-  },
-  {
-    url:
-      "https://storage.googleapis.com/aignosis_static_assets/Screening-Report/page2.2.png",
-    alttext: "report page 14",
-  },
-  {
-    url:
-      "https://storage.googleapis.com/aignosis_static_assets/Screening-Report/page2.3.jpg",
-    alttext: "report page 14",
-  },
-  {
-    url:
-      "https://storage.googleapis.com/aignosis_static_assets/Screening-Report/page2.4.png",
-    alttext: "report page 15",
-  },
-  {
-    url:
-      "https://storage.googleapis.com/aignosis_static_assets/Screening-Report/page2.5.png",
-    alttext: "report page 16",
-  },
-  {
-    url:
-      "https://storage.googleapis.com/aignosis_static_assets/Screening-Report/page2.6.png",
-    alttext: "report page 17",
-  },
-  {
-    url:
-      "https://storage.googleapis.com/aignosis_static_assets/Screening-Report/page2.7.png",
-    alttext: "report page 18",
-  },
+  // {
+  //   url:
+  //     "https://storage.googleapis.com/aignosis_static_assets/Screening-Report/page2.1.png",
+  //   alttext: "report page 13",
+  // },
+  // {
+  //   url:
+  //     "https://storage.googleapis.com/aignosis_static_assets/Screening-Report/page2.2.png",
+  //   alttext: "report page 14",
+  // },
+  // {
+  //   url:
+  //     "https://storage.googleapis.com/aignosis_static_assets/Screening-Report/page2.3.jpg",
+  //   alttext: "report page 14",
+  // },
+  // {
+  //   url:
+  //     "https://storage.googleapis.com/aignosis_static_assets/Screening-Report/page2.4.png",
+  //   alttext: "report page 15",
+  // },
+  // {
+  //   url:
+  //     "https://storage.googleapis.com/aignosis_static_assets/Screening-Report/page2.5.png",
+  //   alttext: "report page 16",
+  // },
+  // {
+  //   url:
+  //     "https://storage.googleapis.com/aignosis_static_assets/Screening-Report/page2.6.png",
+  //   alttext: "report page 17",
+  // },
+  // {
+  //   url:
+  //     "https://storage.googleapis.com/aignosis_static_assets/Screening-Report/page2.7.png",
+  //   alttext: "report page 18",
+  // },
 ];
 
 const ComponentToPrint = React.forwardRef(
